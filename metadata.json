@@ -1,0 +1,8 @@
+{
+  "name": "Eco Friendly Thai - Circular Economy",
+  "description": "Premium circular economy & recycled pulp enterprise transforming waste into eco materials and upcycled building products in Thailand.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

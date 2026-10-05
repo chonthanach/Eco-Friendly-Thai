@@ -168,47 +168,85 @@ const Footer: React.FC<FooterProps> = ({ onNavClick, lang }) => {
       {/* Giant EFT Typographic Wordmark – SVG full-bleed, crops at bottom */}
       <div
         className="w-full overflow-hidden select-none pointer-events-none"
-        style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'center' }}
+        style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center' }}
         aria-hidden="true"
       >
         <svg
-          viewBox="0 0 1310 560"
+          viewBox="0 0 1350 560"
           xmlns="http://www.w3.org/2000/svg"
-          width="65%"
+          className="w-[90%] sm:w-[78%] max-w-[1300px]"
           preserveAspectRatio="xMidYMid meet"
           style={{ display: 'block' }}
         >
-          {/* ── E ── (x: 10 → 380) */}
-          {/* Vertical bar */}
-          <rect x="10"  y="10"  width="72" height="540" fill="#FFFFFF" />
-          {/* Top bar */}
-          <rect x="10"  y="10"  width="340" height="82"  fill="#FFFFFF" />
-          {/* Middle bar */}
-          <rect x="10"  y="249" width="295" height="72"  fill="#FFFFFF" />
-          {/* Bottom bar */}
-          <rect x="10"  y="468" width="340" height="82"  fill="#FFFFFF" />
+          {/* ── E ── (x: 20 → 390, width: 370) */}
+          {/* Vertical bar (thicker: 125px) */}
+          <rect x="20"  y="10"  width="125" height="540" fill="#FFFFFF" />
+          {/* Top bar (thicker: 125px) */}
+          <rect x="20"  y="10"  width="370" height="125" fill="#FFFFFF" />
 
-          {/* ── F ── (x: 460 → 790) */}
-          {/* Vertical bar */}
-          <rect x="460" y="10"  width="72" height="540" fill="#FFFFFF" />
-          {/* Top bar */}
-          <rect x="460" y="10"  width="330" height="82"  fill="#FFFFFF" />
-          {/* Middle bar */}
-          <rect x="460" y="249" width="285" height="72"  fill="#FFFFFF" />
+          {/* Eco Leaf Sprout attached directly to white vertical bar (Horizontal + Blinking Light Animation) */}
+          <g transform="translate(145, 280)">
+            <g id="eft-e-sprout" className="animate-leaf-light pointer-events-auto cursor-pointer">
+              {/* Natural Organic Breeze Sway Animation anchored at stem base (0, 0) */}
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 0 0; -2.2 0 0; 2.5 0 0; -1.2 0 0; 1.5 0 0; 0 0 0"
+                keyTimes="0; 0.22; 0.48; 0.72; 0.88; 1"
+                dur="4s"
+                repeatCount="indefinite"
+              />
 
-          {/* ── T ── (x: 870 → 1290, center: 1080) */}
-          {/* Crossbar base – navy (full width) */}
-          <rect x="870"  y="10"  width="420" height="85" fill="#1E2A4A" />
-          {/* Vertical stem – navy (centered at x=1080, width=90 → x:1035→1125) */}
-          <rect x="1035" y="10"  width="100"  height="540" fill="#1E2A4A" />
-          {/* Left red block  : 870 → 990 (width=120) */}
-          <rect x="870"  y="10"  width="85" height="85" fill="#8B1C2C" />
-          {/* Left white divider : 990 → 1035 (width=45) */}
-          <rect x="950"  y="10"  width="85"  height="85" fill="#FFFFFF" />
-          {/* Right white divider : 1125 → 1170 (width=45) */}
-          <rect x="1135" y="10"  width="85"  height="85" fill="#FFFFFF" />
-          {/* Right red block : 1170 → 1290 (width=120) */}
-          <rect x="1220" y="10"  width="85" height="85" fill="#8B1C2C" />
+              {/* Main Leaf (Horizontal, attached flush to white bar at x=0, tip at x=230, y=0) */}
+              <path
+                d="M 0 -16 C 55 -25, 120 -38, 175 -30 C 205 -25, 225 -8, 230 0 C 220 18, 195 58, 130 65 C 65 52, 20 25, 0 16 Z"
+                fill="#4ADE80"
+              />
+
+              {/* Left/Top Small Leaf (Fresh Light Green #86EFAC, sitting on top of main leaf) */}
+              <path
+                d="M 28 6 C 36 -35, 75 -60, 122 -50 C 110 -20, 72 3, 28 6 Z"
+                fill="#86EFAC"
+              />
+
+              {/* Dark Green Center Leaf Vein Line */}
+              <path
+                d="M 0 0 C 60 -6, 110 -14, 150 -20 C 185 -15, 212 -5, 230 0"
+                stroke="#14532D"
+                strokeWidth="6"
+                strokeLinecap="round"
+              />
+
+              {/* Pulsing Light Glow Orb on the Leaf (ไฟกระพริบดวงไฟเรืองแสง) */}
+              <circle cx="150" cy="-22" r="7" fill="#86EFAC" className="animate-ping opacity-75" />
+              <circle cx="150" cy="-22" r="3.5" fill="#FFFFFF" className="animate-pulse shadow-md" />
+            </g>
+          </g>
+
+          {/* Bottom bar (thicker: 125px) */}
+          <rect x="20"  y="425" width="370" height="125" fill="#FFFFFF" />
+
+          {/* ── F ── (x: 475 → 835, width: 360) */}
+          {/* Vertical bar (thicker: 125px) */}
+          <rect x="475" y="10"  width="125" height="540" fill="#FFFFFF" />
+          {/* Top bar (thicker: 125px) */}
+          <rect x="475" y="10"  width="360" height="125" fill="#FFFFFF" />
+          {/* Middle bar (thicker: 105px) */}
+          <rect x="475" y="228" width="305" height="105" fill="#FFFFFF" />
+
+          {/* ── T ── (x: 910 → 1330, width: 420, center: 1120) */}
+          {/* Crossbar base – navy (full width: 420, height: 125) */}
+          <rect x="910"  y="10"  width="420" height="125" fill="#1E2A4A" />
+          {/* Vertical stem – navy (width: 140, centered: 1050 → 1190) */}
+          <rect x="1050" y="10"  width="140" height="540" fill="#1E2A4A" />
+          {/* Left red block : 910 → 980 (width: 70) */}
+          <rect x="910"  y="10"  width="70"  height="125" fill="#8B1C2C" />
+          {/* Left white divider : 980 → 1050 (width: 70 - equal to red) */}
+          <rect x="980"  y="10"  width="70"  height="125" fill="#FFFFFF" />
+          {/* Right white divider : 1190 → 1260 (width: 70 - equal to red) */}
+          <rect x="1190" y="10"  width="70"  height="125" fill="#FFFFFF" />
+          {/* Right red block : 1260 → 1330 (width: 70) */}
+          <rect x="1260" y="10"  width="70"  height="125" fill="#8B1C2C" />
         </svg>
       </div>
     </footer>

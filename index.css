@@ -169,3 +169,20 @@
   will-change: transform;
 }
 
+/* ─── EFT Footer Leaf Blinking / Pulsing Eco Light Animation ─── */
+@keyframes eftLeafGlowPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.95)) drop-shadow(0 0 22px rgba(74, 222, 128, 0.55));
+  }
+  50% {
+    opacity: 0.42;
+    filter: drop-shadow(0 0 2px rgba(74, 222, 128, 0.25));
+  }
+}
+
+.animate-leaf-light {
+  animation: eftLeafGlowPulse 2.4s ease-in-out infinite;
+  will-change: opacity, filter;
+}
+

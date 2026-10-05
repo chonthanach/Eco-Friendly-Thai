@@ -179,7 +179,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
             {lang === 'th' ? 'ติดต่อ' : 'CONTACT'} <span className="text-[#1B4D3E]">{lang === 'th' ? 'เรา' : 'US'}</span>
           </h2>
           <div className="w-16 h-1 bg-[#1B4D3E] mx-auto rounded-full mb-4"></div>
-          <p className="max-w-2xl mx-auto text-[#5D5A53] font-light text-sm sm:text-base">
+          <p className="max-w-2xl mx-auto text-[#4A4740] font-normal text-sm sm:text-base leading-relaxed">
             {lang === 'th'
               ? 'บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด พร้อมต้อนรับและประสานงานด้านผลิตภัณฑ์อัปไซเคิล เยื่อกระดาษรีไซเคิล และงานโครงการทุกประเภท'
               : 'Eco Friendly Thai Co., Ltd. - Factory location, customer hotline, and official Google Maps directions.'}
@@ -242,7 +242,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
             {/* Map Overlay Button */}
             <div className="p-3 bg-white/95 backdrop-blur-sm border-t border-[#D6D1C7]/60 flex items-center justify-between text-xs px-4">
               <span className="text-[#5D5A53] font-medium truncate pr-2">
-                📍 {CONTACT_INFO.companyNameTh} (ต.หนองอ้อ อ.บ้านโป่ง จ.ราชบุรี)
+                📍 {lang === 'th' ? `${CONTACT_INFO.companyNameTh} (ต.หนองอ้อ อ.บ้านโป่ง จ.ราชบุรี)` : `${CONTACT_INFO.companyName} (Nong O, Ban Pong, Ratchaburi)`}
               </span>
               <a
                 href={CONTACT_INFO.googleMapsUrl}
@@ -268,10 +268,10 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                     {lang === 'th' ? 'ที่ตั้ง' : 'Location'}
                   </h4>
                   <p className="text-xs sm:text-sm text-[#5D5A53] mt-1 leading-relaxed">
-                    {CONTACT_INFO.addressPlantRatchaburi}
+                    {lang === 'th' ? CONTACT_INFO.addressPlantRatchaburi : (CONTACT_INFO.addressPlantRatchaburiEn || CONTACT_INFO.addressPlantRatchaburi)}
                   </p>
                   <p className="text-[11px] text-[#A8A29E] mt-1 leading-normal">
-                    {lang === 'th' ? 'สำนักงานใหญ่:' : 'Headquarters:'} {CONTACT_INFO.addressHeadquarters}
+                    {lang === 'th' ? 'สำนักงานใหญ่:' : 'Headquarters:'} {lang === 'th' ? CONTACT_INFO.addressHeadquarters : (CONTACT_INFO.addressHeadquartersEn || CONTACT_INFO.addressHeadquarters)}
                   </p>
                   <button 
                     onClick={handleCopyAddress}
@@ -310,13 +310,13 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                   <h4 className="text-base sm:text-lg font-bold text-[#2C2A26] leading-snug">
                     {lang === 'th' ? 'โทรศัพท์' : 'Phone'}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#2C2A26] font-semibold mt-1">
-                    <a href="tel:029261388" className="hover:text-[#1B4D3E] transition-colors">02-9261388-9</a>
+                  <p className="text-xs sm:text-sm text-[#1B4D3E] font-bold mt-1 tracking-tight">
+                    <a href="tel:029261388" className="hover:underline">02-9261388-9</a>
                     <span className="mx-1.5 text-[#D6D1C7]">|</span>
-                    <a href="tel:0659616199" className="hover:text-[#1B4D3E] transition-colors">065-961-6199</a>
+                    <a href="tel:0659616199" className="hover:underline">065-961-6199</a>
                   </p>
-                  <p className="text-xs text-[#A8A29E] mt-0.5">
-                    {lang === 'th' ? 'สายด่วนโรงงาน:' : 'Factory Hotline:'} 061-348-9292, 088-564-2993
+                  <p className="text-xs text-[#5D5A53] font-medium mt-0.5">
+                    {lang === 'th' ? 'สายด่วนโรงงาน:' : 'Factory Hotline:'} <span className="font-bold text-[#2C2A26]">061-348-9292, 088-564-2993</span>
                   </p>
                 </div>
               </div>
@@ -375,7 +375,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
             </h3>
 
             {/* Subtitle with EFT info */}
-            <p className="text-xs sm:text-sm text-[#5D5A53] max-w-lg font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4A4740] max-w-lg font-normal leading-relaxed">
               {lang === 'th' 
                 ? 'แผนผังเส้นทางการเดินทางและจุดขนถ่ายสินค้า โรงงานรีไซเคิล บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด (อ.บ้านโป่ง จ.ราชบุรี)'
                 : 'Logistics access route and material drop-off points for Eco Friendly Thai Co., Ltd. (Ban Pong, Ratchaburi)'}
@@ -412,7 +412,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                 <h4 className="text-base sm:text-lg font-bold text-gray-900">
                   {lang === 'th' ? 'ส่งข้อความติดต่อฝ่ายขาย หรือ ขอใบเสนอราคาออนไลน์' : 'Send Message or Request Quotation Online'}
                 </h4>
-                <p className="text-xs text-gray-500 font-light">
+                <p className="text-xs text-gray-600 font-normal">
                   {lang === 'th' ? 'คลิกที่นี่เพื่อกรอกรายละเอียดสินค้าและจำนวนที่ต้องการสั่งซื้อ' : 'Click to submit custom product requirements and dimensions'}
                 </p>
               </div>
@@ -455,7 +455,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                       <input 
                         type="text" 
                         required
-                        placeholder="e.g. สมยศ วัฒน์พานิช"
+                        placeholder={lang === 'th' ? 'e.g. สมยศ วัฒน์พานิช' : 'e.g. John Doe'}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-[#1B4D3E]"
@@ -468,7 +468,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                       </label>
                       <input 
                         type="text" 
-                        placeholder="e.g. เทศบาล / บริษัทรับเหมาก่อสร้าง"
+                        placeholder={lang === 'th' ? 'e.g. เทศบาล / บริษัทรับเหมาก่อสร้าง' : 'e.g. Municipality / Construction Co.'}
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-[#1B4D3E]"
@@ -512,7 +512,7 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
                     </label>
                     <textarea 
                       rows={3}
-                      placeholder="ระบุชื่อสินค้า ขนาด จำนวน หรือสถานที่จัดส่งโครงการ..."
+                      placeholder={lang === 'th' ? 'ระบุชื่อสินค้า ขนาด จำนวน หรือสถานที่จัดส่งโครงการ...' : 'Specify product name, dimensions, quantity, or delivery location...'}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-[#1B4D3E]"

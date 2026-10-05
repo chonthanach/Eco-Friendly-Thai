@@ -30,40 +30,55 @@ function App() {
     setLang(prev => prev === 'th' ? 'en' : 'th');
   };
 
-  // Navigation handler
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-
-    if (view.type !== 'home') {
-      setView({ type: 'home' });
-      setTimeout(() => scrollToSection(targetId), 50);
-    } else {
-      scrollToSection(targetId);
-    }
-  };
-
   const scrollToSection = (targetId: string) => {
     if (!targetId) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+    const tryScroll = () => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
 
-      try {
-        window.history.pushState(null, '', `#${targetId}`);
-      } catch (err) {
-        // Ignore iframe security error
+        try {
+          window.history.pushState(null, '', `#${targetId}`);
+        } catch (err) {
+          // Ignore iframe security error
+        }
+        return true;
       }
+      return false;
+    };
+
+    if (!tryScroll()) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (tryScroll() || attempts > 15) {
+          clearInterval(interval);
+        }
+      }, 40);
+    }
+  };
+
+  // Navigation handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+
+    if (view.type !== 'home') {
+      setView({ type: 'home' });
+      window.scrollTo(0, 0);
+      setTimeout(() => scrollToSection(targetId), 30);
+    } else {
+      scrollToSection(targetId);
     }
   };
 
@@ -87,6 +102,8 @@ function App() {
         onToggleLang={toggleLanguage}
         onSelectLang={(l) => setLang(l)}
         onOpenAi={() => setIsAiOpen(true)}
+        isSubPage={view.type !== 'home'}
+        currentView={view.type}
       />
 
       <main>
@@ -110,6 +127,7 @@ function App() {
             <Services
               lang={lang}
               onConsultService={(serviceName) => {
+                setInquiryProduct(serviceName);
                 scrollToSection('contact');
               }}
             />
@@ -164,7 +182,10 @@ function App() {
         {view.type === 'journal' && (
           <JournalDetail
             article={view.article}
-            onBack={() => setView({ type: 'home' })}
+            onBack={() => {
+              setView({ type: 'home' });
+              setTimeout(() => scrollToSection('press'), 50);
+            }}
             lang={lang}
           />
         )}

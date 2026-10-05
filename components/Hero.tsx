@@ -120,8 +120,44 @@ const ThaiWavingFlagI: React.FC = () => {
   );
 };
 
+// Trust marquee items (ความไว้วางใจจากภาคอุตสาหกรรม - Matching Image 1 Reference)
+const TRUST_MARQUEE_ITEMS_TH = [
+  { text: 'ความไว้วางใจจากภาคอุตสาหกรรม', isHeader: true },
+  { text: 'SCG Chemicals (SCGC)' },
+  { text: 'CP ALL (7-Eleven)' },
+  { text: 'SCGP Packaging' },
+  { text: 'KRS Industrial' },
+  { text: 'DCCE Thailand กรมการเปลี่ยนแปลงสภาพภูมิอากาศ' },
+  { text: 'The Incubation Network' },
+  { text: 'The Circulate Initiative' },
+  { text: 'SecondMuse' },
+  { text: 'Government of Canada (Global Affairs)' },
+  { text: 'ECCA Family Foundation' },
+  { text: 'เครือข่ายโครงการต้นกล้าไร้ถัง' },
+  { text: 'มาตรฐาน Upcycle 100%' },
+  { text: 'Zero-Landfill Circular Solutions' },
+];
+
+const TRUST_MARQUEE_ITEMS_EN = [
+  { text: 'TRUSTED BY LEADING ENTERPRISES', isHeader: true },
+  { text: 'SCG Chemicals (SCGC)' },
+  { text: 'CP ALL (7-Eleven)' },
+  { text: 'SCGP Packaging' },
+  { text: 'KRS Industrial' },
+  { text: 'DCCE Thailand Climate Change Dept.' },
+  { text: 'The Incubation Network' },
+  { text: 'The Circulate Initiative' },
+  { text: 'SecondMuse' },
+  { text: 'Government of Canada' },
+  { text: 'ECCA Family Foundation' },
+  { text: 'Ton-Kla Rai Tung Network' },
+  { text: '100% Upcycled Certified Standards' },
+  { text: 'Zero-Landfill Circular Solutions' },
+];
+
 const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExplorePlants, onWatchVideo, lang }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const marqueeItems = lang === 'th' ? TRUST_MARQUEE_ITEMS_TH : TRUST_MARQUEE_ITEMS_EN;
 
   // Auto slide image every 6 seconds
   useEffect(() => {
@@ -256,7 +292,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExplorePlants, onWatch
                   <h4 className="text-base font-bold text-white mb-0.5">
                     {lang === 'th' ? 'เป็นมิตรต่อสิ่งแวดล้อม' : 'Eco-Friendly'}
                   </h4>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
                     {lang === 'th' ? 'ลดการใช้ทรัพยากร และลดมลพิษ' : 'Resource optimization & zero pollution'}
                   </p>
                 </div>
@@ -271,7 +307,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExplorePlants, onWatch
                   <h4 className="text-base font-bold text-white mb-0.5">
                     {lang === 'th' ? 'Upcycle 100%' : '100% Upcycled'}
                   </h4>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
                     {lang === 'th' ? 'เปลี่ยนขยะให้มีมูลค่า ใช้งานได้จริง' : 'High-utility circular products'}
                   </p>
                 </div>
@@ -286,7 +322,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExplorePlants, onWatch
                   <h4 className="text-base font-bold text-white mb-0.5">
                     {lang === 'th' ? 'มาตรฐานสากล' : 'Global Standards'}
                   </h4>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
                     {lang === 'th' ? 'ผ่านการรับรอง มาตรฐาน DCCE' : 'Certified DCCE & ISO Compliant'}
                   </p>
                 </div>
@@ -357,6 +393,42 @@ const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExplorePlants, onWatch
 
         </div>
 
+      </div>
+
+      {/* Industry Trust Marquee Pill Ribbon (ความไว้วางใจจากภาคอุตสาหกรรม) — placed between hero and stats */}
+      <div className="w-full bg-white border-y border-slate-200/80 shadow-sm">
+        <div className="relative w-full">
+          <div className="w-full bg-white py-3 sm:py-4 overflow-hidden relative group">
+            {/* Fade Gradients on edges for smooth appearance/disappearance */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
+
+            {/* Continuous Marquee Track (Scrolling to Left indefinitely) */}
+            <div className="flex w-max animate-marquee-left group-hover:[animation-play-state:paused] items-center">
+              {[0, 1].map((copyIndex) => (
+                <div key={copyIndex} className="flex items-center gap-6 sm:gap-8 shrink-0 pr-6 sm:pr-8">
+                  {marqueeItems.map((item, idx) => (
+                    <React.Fragment key={idx}>
+                      {item.isHeader ? (
+                        <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-[#1B4D3E] uppercase tracking-wider whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#1B4D3E] animate-pulse" />
+                          {item.text}
+                        </span>
+                      ) : (
+                        <span className="text-xs sm:text-sm font-semibold text-[#2C2A26] hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
+                          {item.text}
+                        </span>
+                      )}
+                      <span className="text-[#B5B0A5] text-xs select-none">
+                        {idx === 0 || idx === 5 || idx === 10 ? '✦' : '•'}
+                      </span>
+                    </React.Fragment>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 2. Impact Metrics Row on Clean White Background matching screenshot */}

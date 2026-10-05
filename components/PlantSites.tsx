@@ -34,13 +34,23 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
             {lang === 'th' ? 'ศักยภาพการผลิตและที่ตั้งโรงงาน' : 'MANUFACTURING CAPACITY & LOCATIONS'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C2A26] mb-4">
-            OUR PLANT <span className="text-[#1B4D3E]">SITES</span>
+            {lang === 'th' ? (
+              <>โรงงานและ <span className="text-[#1B4D3E]">ฐานการผลิต</span></>
+            ) : (
+              <>OUR PLANT <span className="text-[#1B4D3E]">SITES</span></>
+            )}
           </h2>
           <div className="w-20 h-1 bg-[#1B4D3E] mx-auto rounded-full mb-6"></div>
-          <p className="max-w-2xl mx-auto text-[#5D5A53] font-light text-base sm:text-lg">
-            {lang === 'th' 
-              ? 'โรงงานมาตรฐานอุตสาหกรรมสีเขียว 3 แห่ง ครอบคลุมพื้นที่นนทบุรี นครปฐม และราชบุรี พร้อมระบบบำบัดแบบ Zero-Discharge'
-              : '3 strategic processing facilities across Nonthaburi, Nakhon Pathom, and Ratchaburi with 2,000 MT/month total output.'}
+          <p className="max-w-2xl mx-auto text-[#3A3833] font-normal text-base sm:text-lg leading-relaxed">
+            {lang === 'th' ? (
+              <>
+                โรงงานมาตรฐานอุตสาหกรรมสีเขียว <span className="font-bold text-[#1B4D3E]">3</span> แห่ง ครอบคลุมพื้นที่นนทบุรี นครปฐม และราชบุรี พร้อมระบบบำบัดแบบ <span className="font-bold text-[#1B4D3E]">Zero-Discharge</span>
+              </>
+            ) : (
+              <>
+                <span className="font-bold text-[#1B4D3E]">3</span> strategic processing facilities across Nonthaburi, Nakhon Pathom, and Ratchaburi with <span className="font-bold text-[#1B4D3E]">2,000 MT/month</span> total output.
+              </>
+            )}
           </p>
         </div>
 
@@ -62,13 +72,13 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                 
                 {/* Established badge */}
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1B4D3E] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  Est. {plant.established}
+                  {lang === 'th' ? `ก่อตั้ง ${plant.establishedTh || plant.established}` : `Est. ${plant.established}`}
                 </div>
 
                 {/* Capacity badge */}
-                <div className="absolute top-4 right-4 bg-[#1B4D3E] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                <div className="absolute top-4 right-4 bg-[#1B4D3E] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
                   <Gauge className="w-3.5 h-3.5 text-[#8AE0B3]" />
-                  <span>{plant.capacity}</span>
+                  <span className="font-bold tracking-tight">{lang === 'th' ? (plant.capacityTh || plant.capacity) : plant.capacity}</span>
                 </div>
 
                 {/* Center Title overlay matching original site style */}
@@ -76,9 +86,9 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                   <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide leading-tight mb-1 drop-shadow-sm">
                     {lang === 'th' ? plant.nameTh : plant.name}
                   </h3>
-                  <p className="text-xs text-[#8AE0B3] font-medium flex items-center gap-1.5">
+                  <p className="text-xs text-[#8AE0B3] font-semibold flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5" />
-                    <span>{plant.location}</span>
+                    <span>{lang === 'th' ? (plant.locationTh || plant.location) : plant.location}</span>
                   </p>
                 </div>
               </div>
@@ -89,11 +99,11 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                   <span className="text-xs font-bold uppercase tracking-wider text-[#1B4D3E] block mb-2">
                     {lang === 'th' ? 'จุดเน้นกระบวนการ' : 'Core Processing Focus'}
                   </span>
-                  <p className="text-sm font-medium text-[#2C2A26] mb-3">
-                    {plant.focus}
+                  <p className="text-sm font-semibold text-[#2C2A26] mb-3">
+                    {lang === 'th' ? (plant.focusTh || plant.focus) : plant.focus}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#5D5A53] font-light leading-relaxed">
-                    {plant.description}
+                  <p className="text-xs sm:text-sm text-[#4A4740] font-normal leading-relaxed">
+                    {lang === 'th' ? (plant.descriptionTh || plant.description) : plant.description}
                   </p>
                 </div>
 
@@ -139,7 +149,7 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                 <h3 className="text-2xl font-bold">
                   {lang === 'th' ? selectedPlantModal.nameTh : selectedPlantModal.name}
                 </h3>
-                <p className="text-xs text-white/80">
+                <p className="text-xs text-white/90 font-medium">
                   {lang === 'th' ? selectedPlantModal.name : selectedPlantModal.nameTh}
                 </p>
               </div>
@@ -151,9 +161,9 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider text-[#1B4D3E] mb-2">
                   {lang === 'th' ? 'ที่ตั้งและข้อมูลการเดินทาง' : 'Location & Address'}
                 </h4>
-                <p className="text-sm text-[#2C2A26] flex items-center gap-2">
+                <p className="text-sm text-[#2C2A26] font-medium flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-[#1B4D3E]" />
-                  {selectedPlantModal.location}
+                  {lang === 'th' ? (selectedPlantModal.locationTh || selectedPlantModal.location) : selectedPlantModal.location}
                 </p>
               </div>
 
@@ -161,8 +171,8 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider text-[#1B4D3E] mb-2">
                   {lang === 'th' ? 'ภาพรวมกระบวนการผลิต' : 'Plant Overview'}
                 </h4>
-                <p className="text-sm text-[#5D5A53] leading-relaxed font-light">
-                  {selectedPlantModal.description}
+                <p className="text-sm text-[#4A4740] leading-relaxed font-normal">
+                  {lang === 'th' ? (selectedPlantModal.descriptionTh || selectedPlantModal.description) : selectedPlantModal.description}
                 </p>
               </div>
 
@@ -171,10 +181,10 @@ const PlantSites: React.FC<PlantSitesProps> = ({ onSelectPlant, lang }) => {
                   {lang === 'th' ? 'ข้อมูลจำเพาะและเทคโนโลยี' : 'Facility Specifications'}
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {selectedPlantModal.specs.map((spec, i) => (
+                  {(lang === 'th' && selectedPlantModal.specsTh ? selectedPlantModal.specsTh : selectedPlantModal.specs).map((spec, i) => (
                     <div key={i} className="p-3 bg-white rounded-lg border border-[#D6D1C7] text-xs">
-                      <span className="text-[#A8A29E] block uppercase font-medium">{spec.label}</span>
-                      <span className="font-semibold text-[#2C2A26] mt-0.5 block">{spec.value}</span>
+                      <span className="text-[#7A766E] block uppercase font-bold text-[10px] tracking-wider">{spec.label}</span>
+                      <span className="font-bold text-[#1B4D3E] mt-1 block text-sm">{spec.value}</span>
                     </div>
                   ))}
                 </div>

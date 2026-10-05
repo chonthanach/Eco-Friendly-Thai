@@ -26,6 +26,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick, lang }) => {
     'Tile & Roof'
   ];
 
+  const categoryNamesTh: Record<string, string> = {
+    'All': 'สินค้าทั้งหมด',
+    'School & Furniture': 'โต๊ะเก้าอี้และสถานศึกษา',
+    'Building & Decor': 'วัสดุก่อสร้างและตกแต่ง',
+    'Paving & Ground': 'บล็อกปูพื้นและทางเดิน',
+    'Tile & Roof': 'กระเบื้องและหลังคา'
+  };
+
   const filteredProducts = selectedCategory === 'All'
     ? PRODUCTS
     : PRODUCTS.filter(p => p.category === selectedCategory);
@@ -40,17 +48,25 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick, lang }) => {
             {lang === 'th' ? 'ผลิตภัณฑ์อัปไซเคิลมาตรฐานสากล' : 'CERTIFIED CIRCULAR PRODUCTS'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C2A26] mb-4">
-            UPCYCLE <span className="text-[#1B4D3E]">ECO STORE</span>
+            {lang === 'th' ? (
+              <>ร้านค้าผลิตภัณฑ์ <span className="text-[#1B4D3E]">UPCYCLE</span></>
+            ) : (
+              <>UPCYCLE <span className="text-[#1B4D3E]">ECO STORE</span></>
+            )}
           </h2>
           <div className="w-20 h-1 bg-[#1B4D3E] mx-auto rounded-full mb-6"></div>
-          <p className="max-w-2xl mx-auto text-[#5D5A53] font-light text-base sm:text-lg">
-            {lang === 'th'
-              ? 'ท็อปโต๊ะเรียน แผ่นสมาร์ทบอร์ด อิฐบล็อก กระเบื้อง และไม้เทียม ผลิตจากกล่องเครื่องดื่ม UHT 100% รับประกันคุณภาพ 5-10 ปี'
-              : 'Direct from factory: School tops, smart boards, interlocking bricks, and roof sheets certified by DCCE Thailand.'}
+          <p className="max-w-2xl mx-auto text-[#3A3833] font-normal text-base sm:text-lg leading-relaxed">
+            {lang === 'th' ? (
+              <>
+                ท็อปโต๊ะเรียน แผ่นสมาร์ทบอร์ด อิฐบล็อก กระเบื้อง และไม้เทียม ผลิตจากกล่องเครื่องดื่ม <strong className="font-bold text-[#1B4D3E]">UHT 100%</strong> รับประกันคุณภาพ <strong className="font-bold text-[#1B4D3E]">5-10 ปี</strong>
+              </>
+            ) : (
+              <>
+                Direct from factory: School tops, smart boards, interlocking bricks, and roof sheets certified by <strong className="font-bold text-[#1B4D3E]">DCCE Thailand</strong>.
+              </>
+            )}
           </p>
         </div>
-
-
 
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
@@ -64,13 +80,15 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick, lang }) => {
                   : 'bg-white text-[#5D5A53] hover:bg-[#EBE7DE] border border-[#D6D1C7]'
               }`}
             >
-              {cat === 'All' ? (lang === 'th' ? 'สินค้าทั้งหมด' : 'All Products') : cat}
+              {cat === 'All' 
+                ? (lang === 'th' ? 'สินค้าทั้งหมด' : 'All Products') 
+                : (lang === 'th' ? (categoryNamesTh[cat] || cat) : cat)}
             </button>
           ))}
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {filteredProducts.map((product) => (
             <ProductCard 
               key={product.id}
@@ -89,9 +107,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick, lang }) => {
             </div>
             <div>
               <h4 className="text-lg font-bold text-[#2C2A26]">
-                {lang === 'th' ? 'รับประกันสินค้า 5 - 10 ปี พร้อมราคาส่งหน้าโรงงาน' : '5-10 Year Direct Factory Warranty & Wholesale Support'}
+                {lang === 'th' ? (
+                  <>รับประกันสินค้า <span className="font-extrabold text-[#1B4D3E]">5 - 10 ปี</span> พร้อมราคาส่งหน้าโรงงาน</>
+                ) : (
+                  '5-10 Year Direct Factory Warranty & Wholesale Support'
+                )}
               </h4>
-              <p className="text-xs sm:text-sm text-[#5D5A53] font-light">
+              <p className="text-xs sm:text-sm text-[#4A4740] font-normal">
                 {lang === 'th' 
                   ? 'รองรับงานสั่งผลิตขนาดพิเศษสำหรับโครงการก่อสร้าง โรงเรียน และเทศบาลทั่วประเทศ'
                   : 'Custom dimensions and bulk delivery available for school districts and green architecture contractors.'}

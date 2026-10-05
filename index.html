@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco Friendly Thai (EFT) - ผู้นำนวัตกรรมเยื่อกระดาษรีไซเคิลและผลิตภัณฑ์อัปไซเคิล</title>
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="description" content="บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด - We create solutions for waste paper & make sustainable use of plastic recycling" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'Inter', '"Noto Sans Thai"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Inter:wght@500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -25,11 +36,23 @@
       }
 
       body {
-        font-family: 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Sukhumvit Set', 'Thonburi', 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Sukhumvit Set', 'Thonburi', sans-serif;
         background-color: #F5F2EB;
         color: #2C2A26;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+      }
+
+      /* Make English and numbers visually balanced and eliminate frail/washed out weights */
+      .font-light {
+        font-weight: 450 !important;
+      }
+
+      /* English and numeric accents */
+      .en-num {
+        font-weight: 600;
+        letter-spacing: -0.01em;
       }
 
       .no-scrollbar::-webkit-scrollbar {

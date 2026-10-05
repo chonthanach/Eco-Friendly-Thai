@@ -61,6 +61,8 @@ interface NavbarProps {
   onToggleLang: () => void;
   onSelectLang?: (lang: 'th' | 'en') => void;
   onOpenAi: () => void;
+  isSubPage?: boolean;
+  currentView?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ 
@@ -68,7 +70,9 @@ const Navbar: React.FC<NavbarProps> = ({
   lang, 
   onToggleLang,
   onSelectLang,
-  onOpenAi
+  onOpenAi,
+  isSubPage = false,
+  currentView = 'home'
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -109,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({
     <>
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || mobileMenuOpen 
+          scrolled || mobileMenuOpen || isSubPage
             ? 'bg-[#0E2019]/95 backdrop-blur-md py-3 shadow-xl border-b border-white/10' 
             : 'bg-transparent py-4 sm:py-5'
         }`}
@@ -125,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({
               onNavClick(e, '');
             }}
             className="flex items-center group z-50"
-            title="Eco Friendly Thai Co., Ltd."
+            title="Eco Friendly Thai"
           >
             <EftNavLogo isLight={true} />
           </a>
@@ -183,18 +187,22 @@ const Navbar: React.FC<NavbarProps> = ({
             <a 
               href="#products" 
               onClick={(e) => handleLinkClick(e, 'products')} 
-              className="hover:text-emerald-400 transition-colors py-1 cursor-pointer"
+              className={`hover:text-emerald-400 transition-colors py-1 cursor-pointer flex items-center gap-1.5 ${
+                currentView === 'product' ? 'text-emerald-400 font-extrabold border-b-2 border-emerald-400 pb-0.5' : ''
+              }`}
             >
-              {lang === 'th' ? 'สินค้า UPCYCLE' : 'UPCYCLE Products'}
+              <span>{lang === 'th' ? 'สินค้า UPCYCLE' : 'UPCYCLE Products'}</span>
             </a>
 
             {/* 4. ข่าวสาร */}
             <a 
               href="#press" 
               onClick={(e) => handleLinkClick(e, 'press')} 
-              className="hover:text-emerald-400 transition-colors py-1 cursor-pointer"
+              className={`hover:text-emerald-400 transition-colors py-1 cursor-pointer flex items-center gap-1.5 ${
+                currentView === 'journal' ? 'text-emerald-400 font-extrabold border-b-2 border-emerald-400 pb-0.5' : ''
+              }`}
             >
-              {lang === 'th' ? 'ข่าวสาร' : 'News'}
+              <span>{lang === 'th' ? 'ข่าวสาร' : 'News'}</span>
             </a>
 
             {/* 5. ติดต่อเรา */}
@@ -212,7 +220,7 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* Right Controls */}
           <div className="flex items-center gap-2.5 sm:gap-3 z-50">
             {/* Language Switcher Dropdown */}
-            <div className="relative" ref={langDropdownRef}>
+            <div className="relative hidden lg:block" ref={langDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 className="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full bg-black/40 hover:bg-black/60 border border-white/20 text-white transition-all backdrop-blur-sm shadow-sm"
@@ -279,7 +287,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <a 
               href="#contact"
               onClick={(e) => handleLinkClick(e, 'contact')}
-              className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#092219] font-bold text-xs transition-all shadow-md cursor-pointer group"
+              className="hidden lg:flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#092219] font-bold text-xs transition-all shadow-md cursor-pointer group"
               title={lang === 'th' ? 'ติดต่อสอบถาม / ขอใบเสนอราคา' : 'Contact Us / Request Quote'}
             >
               <Mail className="w-3.5 h-3.5 text-[#092219] group-hover:scale-110 transition-transform" />
@@ -341,7 +349,9 @@ const Navbar: React.FC<NavbarProps> = ({
           <a 
             href="#products" 
             onClick={(e) => handleLinkClick(e, 'products')} 
-            className="hover:text-emerald-400 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5"
+            className={`hover:text-emerald-400 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5 ${
+              currentView === 'product' ? 'text-emerald-400 font-bold bg-white/5' : ''
+            }`}
           >
             <span>{lang === 'th' ? 'สินค้า UPCYCLE' : 'UPCYCLE Products'}</span>
             <span className="text-xs text-white/40">05</span>
@@ -349,7 +359,9 @@ const Navbar: React.FC<NavbarProps> = ({
           <a 
             href="#press" 
             onClick={(e) => handleLinkClick(e, 'press')} 
-            className="hover:text-emerald-400 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5"
+            className={`hover:text-emerald-400 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5 ${
+              currentView === 'journal' ? 'text-emerald-400 font-bold bg-white/5' : ''
+            }`}
           >
             <span>{lang === 'th' ? 'ข่าวสาร' : 'News'}</span>
             <span className="text-xs text-white/40">04</span>
@@ -407,6 +419,17 @@ const Navbar: React.FC<NavbarProps> = ({
             <Sparkles className="w-4 h-4 text-emerald-200" />
             <span>{lang === 'th' ? 'ปรึกษา AI Advisor' : 'Ask AI Advisor'}</span>
           </button>
+
+          {/* Mobile Contact Us CTA (moved from header on mobile) */}
+          <a
+            href="#contact"
+            id="mobile-menu-contact"
+            onClick={(e) => handleLinkClick(e, 'contact')}
+            className="w-full py-3.5 bg-emerald-400 hover:bg-emerald-300 text-[#092219] font-bold rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
+          >
+            <Mail className="w-4 h-4" />
+            <span>{lang === 'th' ? 'ติดต่อเรา / ขอใบเสนอราคา' : 'Contact Us / Request Quote'}</span>
+          </a>
         </div>
       </div>
     </>

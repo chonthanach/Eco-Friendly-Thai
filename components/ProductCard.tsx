@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Product } from '../types';
-import { Leaf, Eye, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight, TreeDeciduous, Landmark, List, Globe2, Leaf } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -14,106 +14,164 @@ interface ProductCardProps {
   lang: 'th' | 'en';
 }
 
+// Default "before → after" material images (shared by all upcycled products)
+const DEFAULT_RAW_MATERIAL = '/images/material-raw-cartons.jpg';
+const DEFAULT_FINISHED_MATERIAL = '/images/material-finished-board.jpg';
+
+const CATEGORY_TH: Record<string, string> = {
+  'School & Furniture': 'โต๊ะเก้าอี้และสถานศึกษา',
+  'Building & Decor': 'วัสดุก่อสร้างและตกแต่ง',
+  'Paving & Ground': 'บล็อกปูพื้นและทางเดิน',
+  'Tile & Roof': 'กระเบื้องและหลังคา',
+  'Industrial Pulp': 'เยื่อกระดาษอุตสาหกรรม',
+};
+
 const ProductCard: React.FC<ProductCardProps> = ({ product, onClick, lang }) => {
+  const isTh = lang === 'th';
+  const titleMain = isTh && product.nameTh ? product.nameTh : product.name;
+  const titleSub = isTh ? product.name : (product.nameTh || '');
+  const category = isTh ? (CATEGORY_TH[product.category] || product.category) : product.category;
+
+  // Bullets: tagline + first 2 features (3 lines like the reference)
+  const features = (isTh ? (product.featuresTh || product.features) : product.features) || [];
+  const tagline = isTh ? (product.taglineTh || product.tagline) : product.tagline;
+  const bullets = [tagline, ...features.filter((f) => f !== tagline)].filter(Boolean).slice(0, 3);
+
+  // Split the English sub-title so the last words are bold: "ECO **CHAIR TOP**"
+  const subWords = titleSub.split(' ');
+  const subLight = subWords.length > 1 ? subWords[0] : '';
+  const subBold = subWords.length > 1 ? subWords.slice(1).join(' ') : titleSub;
+
   return (
-    <div 
+    <div
       onClick={onClick}
-      className="group bg-white rounded-2xl overflow-hidden border border-[#D6D1C7]/80 hover:border-[#1B4D3E] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-between"
+      className="group bg-white rounded-3xl overflow-hidden border border-[#E4E0D8] hover:border-[#1B4D3E]/40 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col h-full"
     >
-      {/* Product Image Box */}
-      <div className="relative aspect-[4/3] bg-[#EBE7DE] overflow-hidden">
-        <img 
-          src={product.imageUrl} 
-          alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 brightness-[0.98]"
+      {/* Hero Image */}
+      <div className="relative aspect-[16/9] bg-[#EBE7DE] overflow-hidden">
+        <img
+          src={product.imageUrl}
+          alt={titleMain}
+          loading="lazy"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
         />
-        
-        {/* Discount Badge */}
+
         {product.discountPercent && (
-          <div className="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+          <div className="absolute top-3 left-3 bg-[#E53935] text-white text-xs sm:text-sm font-extrabold px-3.5 py-1.5 rounded-full tracking-wide shadow-lg">
             SAVE {product.discountPercent}%
           </div>
         )}
 
-        {/* Carton Savings Pill Badge */}
         {product.cartonCount && (
-          <div className="absolute top-3 right-3 bg-[#1B4D3E]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md border border-white/20">
-            <Leaf className="w-3 h-3 text-[#8AE0B3]" />
-            <span>{product.cartonCount.toLocaleString()} {lang === 'th' ? 'กล่อง' : 'Cartons'}</span>
+          <div className="absolute top-3 right-3 bg-[#1B4D3E]/95 backdrop-blur-md text-white text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+            <TreeDeciduous className="w-4 h-4 text-[#8AE0B3]" />
+            <span>{product.cartonCount.toLocaleString()} {isTh ? 'กล่อง' : 'Cartons'}</span>
           </div>
         )}
-
-        {/* View Details Pill Badge (View Only Mode) */}
-        <div
-          className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/95 text-[#1B4D3E] shadow-lg flex items-center gap-1.5 text-xs font-bold transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 backdrop-blur-sm border border-emerald-900/10"
-        >
-          <Eye className="w-3.5 h-3.5 text-[#1B4D3E]" />
-          <span>{lang === 'th' ? 'ดูรายละเอียด' : 'View Details'}</span>
-        </div>
       </div>
 
-      {/* Product Info */}
-      <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-        <div>
-          {/* Category & Certification */}
-          <div className="flex items-center justify-between text-[11px] uppercase tracking-wider text-[#A8A29E] mb-1 font-semibold">
-            <span>{product.category}</span>
-            {product.warranty && (
-              <span className="text-[#1B4D3E] font-bold flex items-center gap-0.5">
-                <ShieldCheck className="w-3 h-3" />
-                {product.warranty.split(' ')[0]} {product.warranty.split(' ')[1]}
-              </span>
-            )}
-          </div>
+      {/* Body */}
+      <div className="px-5 sm:px-6 pt-4 pb-5 flex-1 flex flex-col">
 
-          {/* Product Name */}
-          <h3 className="text-xl font-bold text-[#2C2A26] group-hover:text-[#1B4D3E] transition-colors leading-snug">
-            {lang === 'th' && product.nameTh ? product.nameTh : product.name}
-          </h3>
-          <p className="text-xs text-[#5D5A53] mt-0.5 font-light">
-            {lang === 'th' ? product.name : (product.nameTh || '')}
-          </p>
-
-          {/* Tagline */}
-          <p className="text-xs text-[#7A766E] line-clamp-2 mt-2 font-light leading-relaxed">
-            {product.tagline || product.description}
-          </p>
-        </div>
-
-        {/* Specs & Environmental Impact Pill */}
-        {product.carbonOffsetKg && (
-          <div className="bg-[#EBE7DE]/70 px-3 py-2 rounded-lg text-[11px] flex items-center justify-between text-[#2C2A26]">
-            <span className="text-[#5D5A53] font-medium">{lang === 'th' ? 'ลดคาร์บอน' : 'CO2e Offset'}</span>
-            <span className="font-bold text-[#1B4D3E]">-{product.carbonOffsetKg} kgCO2e</span>
+        {/* Warranty */}
+        {product.warranty && (
+          <div className="flex justify-end mb-1.5">
+            <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-[#4A4740] font-medium">
+              <ShieldCheck className="w-4 h-4 text-[#1B4D3E]" />
+              {isTh ? (product.warrantyTh || product.warranty) : product.warranty}
+            </span>
           </div>
         )}
 
-        {/* Price Row */}
-        <div className="pt-3 border-t border-[#D6D1C7]/60 flex items-center justify-between">
+        {/* Title */}
+        <h3 className="text-lg sm:text-xl font-extrabold text-[#1A1A1A] leading-snug group-hover:text-[#1B4D3E] transition-colors">
+          {titleMain}
+        </h3>
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 mt-0.5 mb-4">
+          {titleSub && (
+            <p className="text-base sm:text-lg text-[#1A1A1A] leading-tight">
+              ({subLight && <span className="font-normal">{subLight} </span>}
+              <span className="font-extrabold">{subBold}</span>)
+            </p>
+          )}
+          <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-[#8C7B5E] font-medium">
+            <Landmark className="w-3.5 h-3.5" />
+            {category}
+          </span>
+        </div>
+
+        {/* Before → After material */}
+        <div className="flex items-center gap-2 sm:gap-3 mb-4">
+          <div className="flex-1 aspect-[4/3] rounded-xl overflow-hidden bg-[#EBE7DE] shadow-sm">
+            <img
+              src={product.rawMaterialImage || DEFAULT_RAW_MATERIAL}
+              alt={isTh ? 'วัตถุดิบ กล่องนม UHT ใช้แล้ว' : 'Raw material: used UHT cartons'}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-[#6B6860] shrink-0 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />
+          <div className="flex-1 aspect-[4/3] rounded-xl overflow-hidden bg-[#EBE7DE] shadow-sm">
+            <img
+              src={product.finishedMaterialImage || DEFAULT_FINISHED_MATERIAL}
+              alt={isTh ? 'วัสดุอัปไซเคิลสำเร็จรูป' : 'Finished upcycled material'}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Bullets + Certified badge */}
+        <div className="flex items-end justify-between gap-3 mb-5">
+          <ul className="space-y-1 text-[13px] sm:text-sm text-[#2C2A26] leading-snug list-disc pl-4 marker:text-[#2C2A26]">
+            {bullets.map((b, i) => (
+              <li key={i}>{b}</li>
+            ))}
+          </ul>
+          {product.certification && (
+            <div className="relative shrink-0 inline-flex items-center gap-1 pl-2 pr-1 py-1 rounded-md border border-[#1B4D3E]/60 text-[#1B4D3E]" title={isTh ? (product.certificationTh || product.certification) : product.certification}>
+              <span className="text-[9px] font-extrabold tracking-wider">CERTIFIED</span>
+              <Globe2 className="w-5 h-5" strokeWidth={1.5} />
+              <Leaf className="absolute -top-2.5 right-0 w-3.5 h-3.5 text-[#2E9E5B] fill-[#2E9E5B]" />
+            </div>
+          )}
+        </div>
+
+        {/* Price row */}
+        <div className="mt-auto flex items-end justify-between gap-3 mb-3">
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-[#1B4D3E]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-[#1F7A4D] tracking-tight leading-none">
               ฿{product.price.toLocaleString()}
             </span>
             {product.originalPrice && (
-              <span className="text-xs text-[#A8A29E] line-through">
+              <span className="text-sm sm:text-base text-[#8A857C] line-through">
                 ฿{product.originalPrice.toLocaleString()}
               </span>
             )}
           </div>
-
-          {product.wholesalePrice && (
-            <div className="text-right">
-              <span className="text-[10px] uppercase tracking-wider text-[#A8A29E] block leading-none">
-                {lang === 'th' ? 'ราคาส่ง' : 'Wholesale'}
-              </span>
-              <span className="text-xs font-bold text-[#2C2A26]">
-                ฿{product.wholesalePrice}/pc
-              </span>
+          <div className="text-right text-xs sm:text-sm text-[#2C2A26] leading-snug">
+            <div>
+              {isTh ? 'ราคาปลีก' : 'Retail'} <span className="font-extrabold">฿{product.price.toLocaleString()}</span>
             </div>
-          )}
+            {product.wholesalePrice && (
+              <div>
+                {isTh ? 'ราคาขายส่ง' : 'Wholesale'} <span className="font-extrabold">฿{product.wholesalePrice.toLocaleString()}</span>/{isTh ? 'ชิ้น' : 'pc'}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
 
+        {/* CTA */}
+        <button
+          type="button"
+          id={`product-view-${product.id}`}
+          onClick={(e) => { e.stopPropagation(); onClick(); }}
+          className="w-full py-3 rounded-full bg-[#1F7A4D] hover:bg-[#17633E] text-white text-base sm:text-lg font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+        >
+          <List className="w-5 h-5" />
+          {isTh ? 'ดูสินค้า' : 'View Product'}
+        </button>
+      </div>
     </div>
   );
 };

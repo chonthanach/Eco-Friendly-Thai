@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { FEATURED_VIDEO } from '../constants';
-import { Play, Eye, Clock, CheckCircle2, Share2, Sparkles } from 'lucide-react';
+import { Play, Eye, Clock, CheckCircle2, Share2, Sparkles, X, ExternalLink } from 'lucide-react';
 
 interface VideoSectionProps {
   lang: 'th' | 'en';
@@ -29,13 +29,23 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
             {lang === 'th' ? 'สารคดีและบทสัมภาษณ์พิเศษ' : 'FEATURED INTERVIEW & DOCUMENTARY'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            FEATURED <span className="text-[#8AE0B3]">MEDIA</span>
+            {lang === 'th' ? (
+              <>สารคดีและ <span className="text-[#8AE0B3]">สื่อสัมภาษณ์</span></>
+            ) : (
+              <>FEATURED <span className="text-[#8AE0B3]">MEDIA</span></>
+            )}
           </h2>
           <div className="w-20 h-1 bg-[#8AE0B3] mx-auto rounded-full mb-6"></div>
-          <p className="max-w-2xl mx-auto text-white/80 font-light text-base sm:text-lg">
-            {lang === 'th'
-              ? 'รายการ SME กล้าเปลี่ยน EP 37: เรื่องราวของคุณสมยศ วัฒน์พานิช ในการเปลี่ยนขยะกล่องนมสู่ธุรกิจหมุนเวียน 300 ล้านบาท'
-              : 'Deep-dive documentary on how Eco Friendly Thai scaled from zero to a 300M THB sustainable recycling leader.'}
+          <p className="max-w-2xl mx-auto text-white/90 font-normal text-base sm:text-lg leading-relaxed">
+            {lang === 'th' ? (
+              <>
+                รายการ <strong className="font-bold text-[#8AE0B3]">SME กล้าเปลี่ยน EP 37</strong>: เรื่องราวของคุณสมยศ วัฒน์พานิช ในการเปลี่ยนขยะกล่องนมสู่ธุรกิจหมุนเวียน <strong className="font-bold text-[#8AE0B3]">300 ล้านบาท</strong>
+              </>
+            ) : (
+              <>
+                Deep-dive documentary on how Eco Friendly Thai scaled from zero to a <strong className="font-bold text-[#8AE0B3]">300M THB</strong> sustainable recycling leader.
+              </>
+            )}
           </p>
         </div>
 
@@ -46,34 +56,38 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
           <div className="lg:col-span-7">
             <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl group">
               {isPlaying ? (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-stone-900 p-8 text-center">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-4">
-                    <Play className="w-8 h-8 fill-current" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{FEATURED_VIDEO.title}</h4>
-                  <p className="text-xs text-white/70 max-w-md mb-6">{FEATURED_VIDEO.subtitle}</p>
-                  <a
-                    href="https://www.youtube.com/results?search_query=SME+%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99+EP+37+%E0%B8%AD%E0%B8%B5%E0%B9%82%E0%B8%84%E0%B9%88+%E0%B9%80%E0%B8%9F%E0%B8%A3%E0%B8%99%E0%B8%94%E0%B9%8C%E0%B8%A5%E0%B8%B5%E0%B9%88+%E0%B9%84%E0%B8%97%E0%B8%A2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-2.5 bg-emerald-500 text-[#122B22] font-bold text-xs uppercase tracking-wider rounded-full hover:bg-emerald-400 transition-colors"
+                <div className="w-full h-full relative bg-black">
+                  <iframe
+                    className="w-full h-full"
+                    src={FEATURED_VIDEO.embedUrl}
+                    title={lang === 'th' ? FEATURED_VIDEO.title : (FEATURED_VIDEO.titleEn || FEATURED_VIDEO.title)}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                  <button
+                    onClick={() => setIsPlaying(false)}
+                    className="absolute top-3 right-3 z-30 p-2 rounded-full bg-black/80 hover:bg-black text-white transition-colors border border-white/20 shadow-lg cursor-pointer"
+                    title={lang === 'th' ? 'ปิดวิดีโอ' : 'Close video'}
                   >
-                    Open on YouTube
-                  </a>
+                    <X className="w-4 h-4" />
+                  </button>
                 </div>
               ) : (
                 <>
                   <img 
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200" 
+                    src={FEATURED_VIDEO.thumbnailUrl} 
                     alt="EFT Video Documentary" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200';
+                    }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                   
                   {/* Play Button Overlay */}
                   <button
                     onClick={() => setIsPlaying(true)}
-                    className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-[#1B4D3E]/90 hover:bg-[#1B4D3E] text-white border-2 border-[#8AE0B3] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300"
+                    className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-[#1B4D3E]/95 hover:bg-emerald-600 text-white border-2 border-[#8AE0B3] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Play video"
                   >
                     <Play className="w-8 h-8 fill-current text-[#8AE0B3] ml-1" />
@@ -81,16 +95,34 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
 
                   {/* Video Badges */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white/90">
-                    <span className="bg-black/60 px-3 py-1 rounded-md backdrop-blur-sm">
-                      EP. 37 | SME กล้าให้ (ธนาคารไทยเครดิต)
+                    <span className="bg-black/60 px-3 py-1 rounded-md backdrop-blur-sm font-bold">
+                      {lang === 'th' ? 'EP. 37 | SME กล้าให้ (ธนาคารไทยเครดิต)' : 'EP. 37 | Thai Credit Bank SME'}
                     </span>
-                    <span className="flex items-center gap-1.5 bg-black/60 px-3 py-1 rounded-md backdrop-blur-sm">
+                    <span className="flex items-center gap-1.5 bg-black/60 px-3 py-1 rounded-md backdrop-blur-sm font-bold">
                       <Clock className="w-3.5 h-3.5 text-[#8AE0B3]" />
-                      {FEATURED_VIDEO.duration}
+                      {lang === 'th' ? (FEATURED_VIDEO.durationTh || FEATURED_VIDEO.duration) : FEATURED_VIDEO.duration}
                     </span>
                   </div>
                 </>
               )}
+            </div>
+
+            {/* Quick Watch on YouTube bar below video */}
+            <div className="mt-4 flex items-center justify-between flex-wrap gap-3">
+              <a
+                href={FEATURED_VIDEO.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#CC0000] hover:bg-[#AA0000] text-white font-bold text-xs shadow-md hover:shadow-lg transition-all"
+              >
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>{lang === 'th' ? 'เปิดรับชมบน YouTube' : 'Watch on YouTube'}</span>
+                <ExternalLink className="w-3 h-3 ml-0.5" />
+              </a>
+
+              <span className="text-xs text-white/70">
+                {lang === 'th' ? FEATURED_VIDEO.viewsTh : FEATURED_VIDEO.views}
+              </span>
             </div>
           </div>
 
@@ -101,10 +133,10 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
                 {lang === 'th' ? 'บทสัมภาษณ์ผู้บริหาร' : 'Executive Interview'}
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight mb-3">
-                {FEATURED_VIDEO.title}
+                {lang === 'th' ? FEATURED_VIDEO.title : (FEATURED_VIDEO.titleEn || FEATURED_VIDEO.title)}
               </h3>
-              <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed">
-                {FEATURED_VIDEO.subtitle}
+              <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
+                {lang === 'th' ? FEATURED_VIDEO.subtitle : (FEATURED_VIDEO.subtitleEn || FEATURED_VIDEO.subtitle)}
               </p>
             </div>
 
@@ -113,8 +145,8 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
               <span className="text-xs font-bold uppercase tracking-wider text-white/90 block">
                 {lang === 'th' ? 'ประเด็นสำคัญในวิดีโอ (Key Highlights)' : 'Key Takeaways'}
               </span>
-              {FEATURED_VIDEO.highlights.map((highlight, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/80 font-light">
+              {(lang === 'th' ? FEATURED_VIDEO.highlights : (FEATURED_VIDEO.highlightsEn || FEATURED_VIDEO.highlights)).map((highlight, idx) => (
+                <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/90 font-normal">
                   <CheckCircle2 className="w-4 h-4 text-[#8AE0B3] shrink-0 mt-0.5" />
                   <span>{highlight}</span>
                 </div>
@@ -123,7 +155,9 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
 
             {/* Quote Block */}
             <div className="p-4 rounded-xl bg-white/10 border border-white/15 text-xs text-white/90 font-serif italic">
-              “เราไม่ได้มองว่าขยะคือของเหลือทิ้ง แต่มันคือวัตถุดิบต้นทุนต่ำที่รอการเปลี่ยนสภาพเป็นของที่มีมูลค่าสูงสุด”
+              {lang === 'th' 
+                ? '“เราไม่ได้มองว่าขยะคือของเหลือทิ้ง แต่มันคือวัตถุดิบต้นทุนต่ำที่รอการเปลี่ยนสภาพเป็นของที่มีมูลค่าสูงสุด”' 
+                : '“We do not view waste as discarded debris, but as prime low-cost raw material waiting to be transformed into high-value circular products.”'}
             </div>
           </div>
 

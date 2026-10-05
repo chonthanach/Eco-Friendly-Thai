@@ -44,17 +44,17 @@ const JournalDetail: React.FC<JournalDetailProps> = ({ article, onBack, lang }) 
             <div className="flex items-center gap-4 text-xs text-[#5D5A53]">
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-[#1B4D3E]" />
-                {article.date}
+                {lang === 'th' ? (article.dateTh || article.date) : article.date}
               </span>
               <span className="px-2.5 py-1 bg-[#1B4D3E]/10 text-[#1B4D3E] font-semibold rounded-full uppercase text-[10px]">
-                {article.category}
+                {lang === 'th' ? (article.categoryTh || article.category) : article.category}
               </span>
             </div>
           </div>
 
           {/* Title */}
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#2C2A26] mb-8 leading-tight">
-            {article.title}
+            {lang === 'th' ? (article.titleTh || article.title) : (article.title || article.titleTh)}
           </h1>
 
           {/* Author Badge */}
@@ -64,15 +64,19 @@ const JournalDetail: React.FC<JournalDetailProps> = ({ article, onBack, lang }) 
                 EFT
               </div>
               <div>
-                <span className="text-xs uppercase font-bold text-[#1B4D3E] block">Published by</span>
-                <span className="text-sm font-medium text-[#2C2A26]">{article.author}</span>
+                <span className="text-xs uppercase font-bold text-[#1B4D3E] block">
+                  {lang === 'th' ? 'เผยแพร่โดย' : 'Published by'}
+                </span>
+                <span className="text-sm font-medium text-[#2C2A26]">
+                  {lang === 'th' ? (article.authorTh || article.author) : article.author}
+                </span>
               </div>
             </div>
           )}
 
           {/* Article Body */}
-          <div className="text-base sm:text-lg font-light leading-relaxed text-[#5D5A53] space-y-6">
-            {article.content}
+          <div className="text-base sm:text-lg font-normal leading-relaxed text-[#3A3833] space-y-6">
+            {lang === 'th' ? (article.contentTh || article.content) : article.content}
           </div>
 
           {/* Footer Brand Seal */}

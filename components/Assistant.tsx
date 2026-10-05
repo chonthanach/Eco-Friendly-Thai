@@ -51,6 +51,21 @@ const Assistant: React.FC<AssistantProps> = ({ isOpenExternal, onCloseExternal, 
   ];
 
   useEffect(() => {
+    setMessages(prev => {
+      if (prev.length === 1 && prev[0].role === 'model') {
+        return [{
+          role: 'model',
+          text: lang === 'th' 
+            ? 'สวัสดีครับ ผมคือผู้ช่วย AI ด้านเศรษฐกิจหมุนเวียนของ บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด (EFT) ยินดีให้คำปรึกษาเรื่องการรีไซเคิลกล่องเครื่องดื่ม สเปกผลิตภัณฑ์ Upcycle หรือขอใบเสนอราคาครับ'
+            : 'Welcome to Eco Friendly Thai. I am your circular economy AI advisor. How may I assist you with recycled pulp, upcycled building materials, or factory capacities today?', 
+          timestamp: Date.now()
+        }];
+      }
+      return prev;
+    });
+  }, [lang]);
+
+  useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
@@ -92,7 +107,7 @@ const Assistant: React.FC<AssistantProps> = ({ isOpenExternal, onCloseExternal, 
           {/* Header */}
           <div className="bg-[#0A261C] p-4 text-white flex justify-between items-center border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#0E3527] p-0.5 border border-[#8AE0B3]/40 flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-white/10 p-1 border border-[#8AE0B3]/40 flex items-center justify-center shadow-sm">
                 <EftLogoIcon className="w-full h-full" />
               </div>
               <div>

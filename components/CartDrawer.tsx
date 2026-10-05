@@ -81,7 +81,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
               <p className="font-semibold text-[#2C2A26] text-lg">
                 {lang === 'th' ? 'ไม่มีสินค้าในตะกร้า' : 'Your cart is empty.'}
               </p>
-              <p className="text-xs text-[#5D5A53] max-w-xs font-light">
+              <p className="text-xs text-[#4A4740] max-w-xs font-normal">
                 {lang === 'th' ? 'เลือกชมสินค้าอัปไซเคิลเพื่อเริ่มคำนวณการลดขยะและคาร์บอน' : 'Explore our catalog of certified upcycled building and school furniture products.'}
               </p>
             </div>

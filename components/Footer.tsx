@@ -94,16 +94,28 @@ const Footer: React.FC<FooterProps> = ({ onNavClick, lang }) => {
             </h4>
             <div className="space-y-4 text-sm sm:text-base text-white/90 font-normal">
               <div>
-                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">1. โรงงานไทรน้อย (สำนักงานใหญ่)</strong>
-                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">{CONTACT_INFO.addressPlantSaiNoi}</span>
+                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">
+                  {lang === 'th' ? '1. โรงงานไทรน้อย (สำนักงานใหญ่)' : '1. Sai Noi Plant (Headquarters)'}
+                </strong>
+                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">
+                  {lang === 'th' ? CONTACT_INFO.addressPlantSaiNoi : (CONTACT_INFO.addressPlantSaiNoiEn || 'Sai Yai, Sai Noi, Nonthaburi 11150')}
+                </span>
               </div>
               <div>
-                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">2. โรงงานนครปฐม</strong>
-                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">อ.กำแพงแสน จ.นครปฐม (ศูนย์เยื่อกระดาษ)</span>
+                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">
+                  {lang === 'th' ? '2. โรงงานนครปฐม' : '2. Nakhon Pathom Plant'}
+                </strong>
+                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">
+                  {lang === 'th' ? 'อ.กำแพงแสน จ.นครปฐม (ศูนย์เยื่อกระดาษ)' : 'Kamphaeng Saen, Nakhon Pathom (Recycled Pulp Center)'}
+                </span>
               </div>
               <div>
-                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">3. โรงงานราชบุรี (เมกะแพลนต์)</strong>
-                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">นิคมอุตสาหกรรมโพธาราม จ.ราชบุรี</span>
+                <strong className="text-white block font-bold text-sm sm:text-base mb-0.5">
+                  {lang === 'th' ? '3. โรงงานราชบุรี (เมกะแพลนต์)' : '3. Ratchaburi Mega-Plant'}
+                </strong>
+                <span className="text-xs sm:text-sm text-white/80 leading-relaxed block">
+                  {lang === 'th' ? CONTACT_INFO.addressPlantRatchaburi : (CONTACT_INFO.addressPlantRatchaburiEn || '29/4 Moo 7, Nong O, Ban Pong, Ratchaburi 70110')}
+                </span>
               </div>
             </div>
           </div>
@@ -124,7 +136,9 @@ const Footer: React.FC<FooterProps> = ({ onNavClick, lang }) => {
               </p>
               <p className="flex items-start gap-2.5">
                 <MapPin className="w-4.5 h-4.5 text-[#8AE0B3] shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/85 leading-relaxed">{CONTACT_INFO.addressHeadquarters}</span>
+                <span className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                  {lang === 'th' ? CONTACT_INFO.addressHeadquarters : (CONTACT_INFO.addressHeadquartersEn || '99/92 Moo 2, Sai Ma, Mueang Nonthaburi 11000')}
+                </span>
               </p>
               <p className="text-xs text-white/70 pt-1 font-mono">
                 Tax ID: {CONTACT_INFO.registrationNo}
@@ -138,12 +152,12 @@ const Footer: React.FC<FooterProps> = ({ onNavClick, lang }) => {
         <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/60 font-medium">
           <p>© {new Date().getFullYear()} Eco Friendly Thai Co., Ltd. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Thailand Circular Economy Alliance</span>
+            <span>{lang === 'th' ? 'ภาคีเครือข่ายเศรษฐกิจหมุนเวียนแห่งประเทศไทย' : 'Thailand Circular Economy Alliance'}</span>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-[#8AE0B3] hover:text-white font-semibold transition-colors"
             >
-              <span>Back to Top</span>
+              <span>{lang === 'th' ? 'กลับขึ้นด้านบน' : 'Back to Top'}</span>
               <ArrowUp className="w-4 h-4" />
             </button>
           </div>

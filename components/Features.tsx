@@ -23,7 +23,7 @@ const Features: React.FC = () => {
            <h3 className="text-4xl md:text-5xl font-serif mb-8 text-[#2C2A26] leading-tight">
              Materials that age <br/> with grace.
            </h3>
-           <p className="text-lg text-[#5D5A53] font-light leading-relaxed mb-12 max-w-md">
+           <p className="text-lg text-[#3A3833] font-normal leading-relaxed mb-12 max-w-md">
              We reject the disposable. Every Aura product is crafted from sandstone, unpolished aluminum, and organic fabrics that develop a unique patina over time.
            </p>
            <a href="#" className="inline-block text-sm font-medium uppercase tracking-widest underline underline-offset-8 hover:text-[#8C8881] transition-colors">Read about our materials</a>
@@ -37,7 +37,7 @@ const Features: React.FC = () => {
            <h3 className="text-4xl md:text-5xl font-serif mb-8 text-[#F5F2EB] leading-tight">
              Silence by default.
            </h3>
-           <p className="text-lg text-[#A8A29E] font-light leading-relaxed mb-12 max-w-md">
+           <p className="text-lg text-[#D6D1C7] font-normal leading-relaxed mb-12 max-w-md">
              Our devices respect your attention. No blinking lights, no intrusive notifications. Just calm utility when you need it, and a beautiful object when you don't.
            </p>
         </div>

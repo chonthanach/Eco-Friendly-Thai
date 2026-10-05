@@ -32,13 +32,23 @@ const Services: React.FC<ServicesProps> = ({ lang, onConsultService }) => {
             {lang === 'th' ? 'บริการอุตสาหกรรมและผลิตภัณฑ์หลัก' : 'CORE INDUSTRIAL SERVICES'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C2A26] mb-4">
-            SERVICES <span className="text-[#1B4D3E]">& SOLUTIONS</span>
+            {lang === 'th' ? (
+              <>บริการและ <span className="text-[#1B4D3E]">โซลูชัน</span></>
+            ) : (
+              <>SERVICES <span className="text-[#1B4D3E]">& SOLUTIONS</span></>
+            )}
           </h2>
           <div className="w-20 h-1 bg-[#1B4D3E] mx-auto rounded-full mb-6"></div>
-          <p className="max-w-2xl mx-auto text-[#5D5A53] font-light text-base sm:text-lg">
-            {lang === 'th'
-              ? '3 บริการหลักครบวงจร ตั้งแต่การแยกสกัดเยื่อกระดาษรีไซเคิลเกรดสูง การขึ้นรูปพลาสติกทดแทนไม้ ไปจนถึงการแปรรูปเชื้อเพลิง RDF'
-              : 'End-to-end circular services transforming packaging waste into valuable industrial feedstock and carbon-negative products.'}
+          <p className="max-w-2xl mx-auto text-[#3A3833] font-normal text-base sm:text-lg leading-relaxed">
+            {lang === 'th' ? (
+              <>
+                บริการหลักครบวงจร <span className="font-bold text-[#1B4D3E]">3</span> ด้าน ตั้งแต่การแยกสกัดเยื่อกระดาษรีไซเคิลเกรดสูง การขึ้นรูปพลาสติกทดแทนไม้ ไปจนถึงการแปรรูปเชื้อเพลิง <span className="font-bold text-[#1B4D3E]">RDF</span>
+              </>
+            ) : (
+              <>
+                <span className="font-bold text-[#1B4D3E]">3</span> end-to-end circular services transforming packaging waste into valuable industrial feedstock and carbon-negative products.
+              </>
+            )}
           </p>
         </div>
 
@@ -58,8 +68,8 @@ const Services: React.FC<ServicesProps> = ({ lang, onConsultService }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
-                  <span className="text-xs font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
-                    {service.outputCapacity}
+                  <span className="text-xs font-bold uppercase tracking-wider bg-[#1B4D3E]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md">
+                    {lang === 'th' ? (service.outputCapacityTh || service.outputCapacity) : service.outputCapacity}
                   </span>
                 </div>
               </div>
@@ -74,26 +84,26 @@ const Services: React.FC<ServicesProps> = ({ lang, onConsultService }) => {
                   <h3 className="text-2xl font-bold text-[#2C2A26] mb-2 leading-tight">
                     {lang === 'th' ? service.titleTh : service.title}
                   </h3>
-                  <p className="text-xs text-[#1B4D3E] font-medium mb-4">
+                  <p className="text-xs text-[#1B4D3E] font-semibold mb-4">
                     {lang === 'th' ? service.title : service.titleTh}
                   </p>
 
-                  <p className="text-sm font-medium text-[#2C2A26] mb-3">
-                    {service.description}
+                  <p className="text-sm font-semibold text-[#2C2A26] mb-3">
+                    {lang === 'th' ? (service.descriptionTh || service.description) : service.description}
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#5D5A53] font-light leading-relaxed mb-6">
-                    {service.details}
+                  <p className="text-xs sm:text-sm text-[#4A4740] font-normal leading-relaxed mb-6">
+                    {lang === 'th' ? (service.detailsTh || service.details) : service.details}
                   </p>
 
                   {/* Target Industries */}
                   <div className="space-y-2 pt-4 border-t border-[#D6D1C7]">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#A8A29E] block">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#7A766E] block">
                       {lang === 'th' ? 'กลุ่มอุตสาหกรรมเป้าหมาย' : 'Target Applications'}
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {service.targetIndustries.map((ind, i) => (
-                        <span key={i} className="text-[11px] px-2.5 py-1 bg-white text-[#2C2A26] rounded-md border border-[#D6D1C7]/70 font-medium">
+                      {(lang === 'th' && service.targetIndustriesTh ? service.targetIndustriesTh : service.targetIndustries).map((ind, i) => (
+                        <span key={i} className="text-[11px] px-2.5 py-1 bg-white text-[#2C2A26] rounded-md border border-[#D6D1C7]/70 font-semibold">
                           {ind}
                         </span>
                       ))}

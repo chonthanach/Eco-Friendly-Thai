@@ -27,7 +27,11 @@ const About: React.FC<AboutProps> = ({ lang }) => {
             {lang === 'th' ? 'เรื่องราวและความมุ่งมั่นของเรา' : 'OUR HERITAGE & MISSION'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C2A26] mb-4">
-            ABOUT <span className="text-[#1B4D3E]">EFT</span>
+            {lang === 'th' ? (
+              <>เกี่ยวกับ <span className="text-[#1B4D3E]">EFT</span></>
+            ) : (
+              <>ABOUT <span className="text-[#1B4D3E]">EFT</span></>
+            )}
           </h2>
           <div className="w-20 h-1 bg-[#1B4D3E] mx-auto rounded-full"></div>
         </div>
@@ -43,27 +47,33 @@ const About: React.FC<AboutProps> = ({ lang }) => {
                   <Leaf className="w-3.5 h-3.5" />
                   {lang === 'th' ? 'ก่อตั้งขึ้นในปี พ.ศ. 2556 (2013)' : 'Founded in 2013, Thailand'}
                 </span>
-                <div className="w-9 h-9 p-0.5 rounded-lg bg-[#143D31] flex items-center justify-center shadow-sm">
+                <div className="w-10 h-10 p-1 rounded-xl bg-white/10 border border-[#8AE0B3]/30 flex items-center justify-center shadow-sm">
                   <EftLogoIcon className="w-full h-full" />
                 </div>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold text-[#2C2A26] leading-snug mb-6">
-                {lang === 'th'
-                  ? 'จากขยะบรรจุภัณฑ์ สู่คุณค่าใหม่ของเศรษฐกิจหมุนเวียน 2,000 เมตริกตัน/เดือน'
-                  : 'From Beverage Carton Waste to High-Grade Circular Resources'}
+                {lang === 'th' ? (
+                  <>จากขยะบรรจุภัณฑ์ สู่คุณค่าใหม่ของเศรษฐกิจหมุนเวียน <span className="text-[#1B4D3E] font-extrabold">2,000</span> เมตริกตัน/เดือน</>
+                ) : (
+                  <>From Beverage Carton Waste to High-Grade Circular Resources</>
+                )}
               </h3>
 
-              <p className="text-base sm:text-lg text-[#5D5A53] font-light leading-relaxed mb-6">
-                {lang === 'th'
-                  ? 'สำหรับสายการผลิตเยื่อกระดาษรีไซเคิล เราได้เริ่มต้นโรงงานแห่งแรกในนาม Eco Friendly Thailand ในปี 2013 เพื่อนำกล่องนม UHT และขยะบรรจุภัณฑ์มาแยกสกัดเป็นเยื่อกระดาษขาวบริสุทธิ์เกรดพรีเมียม'
-                  : 'For recycle pulp, we started our plant named Eco Friendly Thailand in 2013. Today we have scaled to serve customers with massive monthly production, expanding to a third mega-plant to reach 2,000 MT/month total capacity.'}
+              <p className="text-base sm:text-lg text-[#3A3833] font-normal leading-relaxed mb-6">
+                {lang === 'th' ? (
+                  <>สำหรับสายการผลิตเยื่อกระดาษรีไซเคิล เราได้เริ่มต้นโรงงานแห่งแรกในนาม <strong className="font-bold text-[#1B4D3E]">Eco Friendly Thailand</strong> ในปี <strong className="font-bold text-[#1B4D3E]">2013</strong> เพื่อนำกล่องนม <strong className="font-bold text-[#1B4D3E]">UHT</strong> และขยะบรรจุภัณฑ์มาแยกสกัดเป็นเยื่อกระดาษขาวบริสุทธิ์เกรดพรีเมียม</>
+                ) : (
+                  <>For recycle pulp, we started our plant named <strong className="font-bold text-[#1B4D3E]">Eco Friendly Thailand</strong> in <strong className="font-bold text-[#1B4D3E]">2013</strong>. Today we have scaled to serve customers with massive monthly production, expanding to a third mega-plant to reach <strong className="font-bold text-[#1B4D3E]">2,000 MT/month</strong> total capacity.</>
+                )}
               </p>
 
-              <p className="text-base sm:text-lg text-[#5D5A53] font-light leading-relaxed mb-8">
-                {lang === 'th'
-                  ? 'ปัจจุบันเราขยายโรงงานครอบคลุม 3 จุดยุทธศาสตร์ (ไทรน้อย นนทบุรี, นครปฐม และราชบุรี) มีกำลังการผลิตรวมทะลุ 2,000 MT/เดือน พร้อมต่อยอดนำพลาสติกอะลูมิเนียม (Poly-Al) มาอัดขึ้นรูปเป็นวัสดุก่อสร้าง ไม้เทียม และโต๊ะเก้าอี้นักเรียน Eco School Furniture 100% Zero-Waste'
-                  : 'Today we operate across 3 strategic sites with state-of-the-art closed-loop hydro-pulping and heavy thermo-compression systems, achieving 100% material utilization without harmful chemical bleaching.'}
+              <p className="text-base sm:text-lg text-[#3A3833] font-normal leading-relaxed mb-8">
+                {lang === 'th' ? (
+                  <>ปัจจุบันเราขยายโรงงานครอบคลุม <strong className="font-bold text-[#1B4D3E]">3</strong> จุดยุทธศาสตร์ (ไทรน้อย นนทบุรี, นครปฐม และราชบุรี) มีกำลังการผลิตรวมทะลุ <strong className="font-bold text-[#1B4D3E]">2,000 MT/เดือน</strong> พร้อมต่อยอดนำพลาสติกอะลูมิเนียม (<strong className="font-bold text-[#1B4D3E]">Poly-Al</strong>) มาอัดขึ้นรูปเป็นวัสดุก่อสร้าง ไม้เทียม และโต๊ะเก้าอี้นักเรียน Eco School Furniture <strong className="font-bold text-[#1B4D3E]">100% Zero-Waste</strong></>
+                ) : (
+                  <>Today we operate across <strong className="font-bold text-[#1B4D3E]">3</strong> strategic sites with state-of-the-art closed-loop hydro-pulping and heavy thermo-compression systems, achieving <strong className="font-bold text-[#1B4D3E]">100%</strong> material utilization without harmful chemical bleaching.</>
+                )}
               </p>
 
               {/* Key Bullet Highlights */}
@@ -71,15 +81,17 @@ const About: React.FC<AboutProps> = ({ lang }) => {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#1B4D3E] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-[#2C2A26]">100% Closed-Loop System</h4>
-                    <p className="text-xs text-[#5D5A53]">{lang === 'th' ? 'ระบบหมุนเวียนน้ำและไร้สารพิษ 98%' : '98% closed-loop zero discharge'}</p>
+                    <h4 className="text-sm font-bold text-[#2C2A26]">100% Closed-Loop System</h4>
+                    <p className="text-xs text-[#4A4740] font-normal">
+                      {lang === 'th' ? <>ระบบหมุนเวียนน้ำและไร้สารพิษ <strong className="font-bold text-[#1B4D3E]">98%</strong></> : '98% closed-loop zero discharge'}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#1B4D3E] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-[#2C2A26]">DCCE Certified</h4>
-                    <p className="text-xs text-[#5D5A53]">{lang === 'th' ? 'มาตรฐาน Upcycle จากกรมการเปลี่ยนแปลงสภาพภูมิอากาศ' : 'National circular economy certified'}</p>
+                    <h4 className="text-sm font-bold text-[#2C2A26]">DCCE Certified</h4>
+                    <p className="text-xs text-[#4A4740] font-normal">{lang === 'th' ? 'มาตรฐาน Upcycle จากกรมการเปลี่ยนแปลงสภาพภูมิอากาศ' : 'National circular economy certified'}</p>
                   </div>
                 </div>
               </div>
@@ -103,7 +115,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
                     <span className="text-xs uppercase tracking-wider text-[#1B4D3E] font-bold block mb-1">
                       {lang === 'th' ? 'วิสัยทัศน์สีเขียว' : 'Green Vision'}
                     </span>
-                    <p className="text-sm font-medium text-[#2C2A26]">
+                    <p className="text-sm font-semibold text-[#2C2A26]">
                       {lang === 'th' 
                         ? '“เปลี่ยนขยะที่ไม่ต้องการ สู่คุณค่าใหม่เพื่อโลกที่น่าอยู่”' 
                         : '“Creating high-value circular solutions for our planet.”'}
@@ -127,14 +139,16 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               <div className="w-12 h-12 rounded-lg bg-[#1B4D3E]/10 text-[#1B4D3E] flex items-center justify-center mb-6">
                 <Recycle className="w-6 h-6" />
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 01</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 01</span>
               <h4 className="text-xl font-bold text-[#2C2A26] mb-3">
                 {lang === 'th' ? 'แยกเยื่อกระดาษบริสุทธิ์' : 'Hydro-Pulping Separation'}
               </h4>
-              <p className="text-sm text-[#5D5A53] leading-relaxed font-light">
-                {lang === 'th'
-                  ? 'สกัดเส้นใยเซลลูโลสยาว (Long Kraft Fiber) คุณภาพสูงจากกล่อง UHT สำหรับส่งโรงงานผลิตกระดาษคราฟต์ บรรจุภัณฑ์ และกระเบื้องไฟเบอร์ซีเมนต์'
-                  : 'Extracting virgin-grade unbleached Kraft fibers with superior tensile and burst index for high-performance packaging.'}
+              <p className="text-sm text-[#4A4740] leading-relaxed font-normal">
+                {lang === 'th' ? (
+                  <>สกัดเส้นใยเซลลูโลสยาว (<strong className="font-bold text-[#1B4D3E]">Long Kraft Fiber</strong>) คุณภาพสูงจากกล่อง <strong className="font-bold text-[#1B4D3E]">UHT</strong> สำหรับส่งโรงงานผลิตกระดาษคราฟต์ บรรจุภัณฑ์ และกระเบื้องไฟเบอร์ซีเมนต์</>
+                ) : (
+                  'Extracting virgin-grade unbleached Kraft fibers with superior tensile and burst index for high-performance packaging.'
+                )}
               </p>
             </div>
           </div>
@@ -144,14 +158,16 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               <div className="w-12 h-12 rounded-lg bg-[#1B4D3E]/10 text-[#1B4D3E] flex items-center justify-center mb-6">
                 <Award className="w-6 h-6" />
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 02</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 02</span>
               <h4 className="text-xl font-bold text-[#2C2A26] mb-3">
                 {lang === 'th' ? 'อัปไซเคิล Poly-Al ไม่ใช้ไม้' : 'Poly-Al Wood Replacement'}
               </h4>
-              <p className="text-sm text-[#5D5A53] leading-relaxed font-light">
-                {lang === 'th'
-                  ? 'นำฟิล์มพลาสติกและฟอยล์อะลูมิเนียมมาอัดขึ้นรูปด้วยความร้อนสูง เป็นไม้เทียม แผ่นสมาร์ทบอร์ด และบล็อกปูพื้น กันน้ำ ปลวกไม่กิน 100%'
-                  : 'Compressing Poly-Al into weather-proof, termite-proof, asbestos-free building panels and modular pavers.'}
+              <p className="text-sm text-[#4A4740] leading-relaxed font-normal">
+                {lang === 'th' ? (
+                  <>นำฟิล์มพลาสติกและฟอยล์อะลูมิเนียม (<strong className="font-bold text-[#1B4D3E]">Poly-Al</strong>) มาอัดขึ้นรูปด้วยความร้อนสูง เป็นไม้เทียม แผ่นสมาร์ทบอร์ด และบล็อกปูพื้น กันน้ำ ปลวกไม่กิน <strong className="font-bold text-[#1B4D3E]">100%</strong></>
+                ) : (
+                  'Compressing Poly-Al into weather-proof, termite-proof, asbestos-free building panels and modular pavers.'
+                )}
               </p>
             </div>
           </div>
@@ -161,14 +177,16 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               <div className="w-12 h-12 rounded-lg bg-[#1B4D3E]/10 text-[#1B4D3E] flex items-center justify-center mb-6">
                 <TrendingUp className="w-6 h-6" />
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 03</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#1B4D3E] block mb-2">Pillar 03</span>
               <h4 className="text-xl font-bold text-[#2C2A26] mb-3">
                 {lang === 'th' ? 'พลังงานสะอาด RDF Zero-Waste' : 'RDF Energy Recovery'}
               </h4>
-              <p className="text-sm text-[#5D5A53] leading-relaxed font-light">
-                {lang === 'th'
-                  ? 'เศษพลาสติกที่ไม่สามารถนำมารีไซเคิลซ้ำได้ จะถูกแปรรูปเป็นเชื้อเพลิงขยะ RDF คุณภาพสูง เพื่อใช้ทดแทนถ่านหินในเตาเผาอุตสาหกรรม'
-                  : 'Transforming residual plastic fractions into high-calorific Refuse-Derived Fuel for clean industrial co-processing.'}
+              <p className="text-sm text-[#4A4740] leading-relaxed font-normal">
+                {lang === 'th' ? (
+                  <>เศษพลาสติกที่ไม่สามารถนำมารีไซเคิลซ้ำได้ จะถูกแปรรูปเป็นเชื้อเพลิงขยะ <strong className="font-bold text-[#1B4D3E]">RDF</strong> คุณภาพสูง เพื่อใช้ทดแทนถ่านหินในเตาเผาอุตสาหกรรม</>
+                ) : (
+                  'Transforming residual plastic fractions into high-calorific Refuse-Derived Fuel for clean industrial co-processing.'
+                )}
               </p>
             </div>
           </div>

@@ -55,7 +55,7 @@ const Checkout: React.FC<CheckoutProps> = ({ items, onBack, lang }) => {
             <h1 className="text-3xl font-extrabold text-[#2C2A26]">
               {lang === 'th' ? 'บันทึกคำสั่งซื้อ / คำขอใบเสนอราคาสำเร็จ!' : 'Quotation & Order Submitted!'}
             </h1>
-            <p className="text-sm text-[#5D5A53] leading-relaxed font-light">
+            <p className="text-sm text-[#4A4740] leading-relaxed font-normal">
               {lang === 'th'
                 ? 'ระบบได้ส่งข้อมูลไปยังฝ่ายขายของ บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด เจ้าหน้าที่จะติดต่อกลับพร้อมใบเสนอราคาทางการ (Official Quotation) และกำหนดส่งสินค้า'
                 : 'Your order draft and quotation request has been received. Our sales team will email you an official proforma invoice with freight options.'}
@@ -86,7 +86,7 @@ const Checkout: React.FC<CheckoutProps> = ({ items, onBack, lang }) => {
                 <h1 className="text-3xl font-extrabold text-[#2C2A26] mb-2">
                   {lang === 'th' ? 'ข้อมูลการสั่งซื้อและออกใบกำกับภาษี' : 'Order & Invoicing Details'}
                 </h1>
-                <p className="text-xs sm:text-sm text-[#5D5A53] mb-8 font-light">
+                <p className="text-xs sm:text-sm text-[#4A4740] mb-8 font-normal">
                   {lang === 'th' 
                     ? 'กรอกข้อมูลสถานที่จัดส่ง เพื่อให้ฝ่ายขายคำนวณค่าขนส่งและส่วนลดปริมาณ' 
                     : 'Provide delivery and billing details for accurate quotation processing.'}
@@ -234,7 +234,7 @@ const Checkout: React.FC<CheckoutProps> = ({ items, onBack, lang }) => {
                   <span>DCCE Thailand Certified</span>
                 </div>
                 <h4 className="text-base font-bold">100% Upcycled Circular Economy</h4>
-                <p className="text-xs text-white/80 font-light leading-relaxed">
+                <p className="text-xs text-white/90 font-normal leading-relaxed">
                   Every product is documented with carbon credits and UHT carton conversion metrics for your company&apos;s annual ESG sustainability report.
                 </p>
               </div>

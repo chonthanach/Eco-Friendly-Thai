@@ -63,7 +63,8 @@ const Services: React.FC<ServicesProps> = ({ lang, onConsultService }) => {
               <div className="relative h-60 w-full overflow-hidden bg-stone-200">
                 <img 
                   src={service.imageUrl} 
-                  alt={service.title} 
+                  alt={lang === 'th' ? service.titleTh : service.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

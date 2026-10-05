@@ -121,7 +121,7 @@ export const SERVICES: ServiceItem[] = [
     iconName: 'Layers',
     outputCapacity: '1,500 MT / Month',
     outputCapacityTh: '1,500 เมตริกตัน / เดือน',
-    imageUrl: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: '/images/recycled-pulp-production.jpg',
     targetIndustries: ['Corrugated Box & Packaging', 'Tissue Paper Mills', 'Fiber Cement Construction Boards', 'Molded Pulp Packaging'],
     targetIndustriesTh: ['โรงงานกล่องและบรรจุภัณฑ์กระดาษ', 'โรงงานผลิตกระดาษทิชชู่', 'อุตสาหกรรมแผ่นไฟเบอร์ซีเมนต์', 'บรรจุภัณฑ์เยื่อกระดาษขึ้นรูป']
   },
@@ -136,7 +136,7 @@ export const SERVICES: ServiceItem[] = [
     iconName: 'Boxes',
     outputCapacity: '500 MT / Month',
     outputCapacityTh: '500 เมตริกตัน / เดือน',
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: '/images/upcycled-plastic-composite.jpg',
     targetIndustries: ['Green Architecture & Construction', 'School Furniture & Public Amenities', 'Landscape Pavers & Walkways', 'Interior Decorative Cladding'],
     targetIndustriesTh: ['งานสถาปัตยกรรมและก่อสร้างสีเขียว', 'โต๊ะเก้าอี้นักเรียนและสาธารณูปโภค', 'บล็อกปูพื้นทางเดินและจัดสวน', 'แผ่นตกแต่งผนังภายใน-ภายนอก']
   },
@@ -151,7 +151,7 @@ export const SERVICES: ServiceItem[] = [
     iconName: 'Flame',
     outputCapacity: '300 MT / Month',
     outputCapacityTh: '300 เมตริกตัน / เดือน',
-    imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: '/images/rdf-fuel-pellets.jpg',
     targetIndustries: ['Cement Kilns Co-processing', 'Biomass & Waste-to-Energy Power Plants', 'Industrial Boiler Facilities'],
     targetIndustriesTh: ['เตาเผาปูนซีเมนต์ทดแทนถ่านหิน', 'โรงไฟฟ้าชีวมวลและขยะพลังงาน', 'โรงงานอุตสาหกรรมที่ใช้หม้อต้มไอน้ำ (Boiler)']
   }

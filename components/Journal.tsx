@@ -169,7 +169,7 @@ const Journal: React.FC<JournalProps> = ({ onArticleClick, lang }) => {
                                     ${idx === activeIndex
                                       ? 'text-[#111] translate-x-1.5'
                                       : 'text-[#C7C3B9] hover:text-[#8E8A80]'}`}>
-                      {article.title}
+                      {lang === 'th' ? (article.titleTh || article.title) : (article.title || article.titleTh)}
                     </h3>
                   </div>
                 ))}
@@ -184,7 +184,7 @@ const Journal: React.FC<JournalProps> = ({ onArticleClick, lang }) => {
                               border border-white/80 bg-stone-200">
                 <img key={activeArticle.id}
                      src={activeArticle.image}
-                     alt={activeArticle.title}
+                     alt={lang === 'th' ? (activeArticle.titleTh || activeArticle.title) : activeArticle.title}
                      className="w-full h-full object-cover
                                 group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent
@@ -202,10 +202,10 @@ const Journal: React.FC<JournalProps> = ({ onArticleClick, lang }) => {
             <div className="lg:col-span-4 space-y-5">
               <div className="space-y-3.5">
                 <p className="text-sm sm:text-base font-bold text-[#111] leading-relaxed">
-                  {activeArticle.title}
+                  {lang === 'th' ? (activeArticle.titleTh || activeArticle.title) : (activeArticle.title || activeArticle.titleTh)}
                 </p>
                 <p className="text-xs sm:text-sm text-[#4A4740] leading-relaxed line-clamp-4">
-                  {activeArticle.excerpt}
+                  {lang === 'th' ? (activeArticle.excerptTh || activeArticle.excerpt) : (activeArticle.excerpt || activeArticle.excerptTh)}
                 </p>
               </div>
 

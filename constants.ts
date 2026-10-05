@@ -621,193 +621,211 @@ export const CLIENT_PARTNERS = [
 export const JOURNAL_ARTICLES: JournalArticle[] = [
   {
     id: 1,
-    title: 'ต้นกล้าไร้ถัง: ภาคีเครือข่ายระบบนิเวศจัดการขยะ สร้างเยาวชนกู้โลก',
-    titleTh: 'ต้นกล้าไร้ถัง: ภาคีเครือข่ายระบบนิเวศจัดการขยะ สร้างเยาวชนกู้โลก',
-    date: 'June 22, 2022',
-    dateTh: '22 มิถุนายน 2565',
-    category: 'Press Release & Social Impact',
-    categoryTh: 'ข่าวประชาสัมพันธ์และผลลัพธ์ทางสังคม',
-    author: 'EFT Public Relations & Network Alliance',
-    authorTh: 'ฝ่ายสื่อสารองค์กรและภาคีเครือข่าย EFT',
-    excerpt: 'Eco Friendly Thai partners with SCGC, CP ALL, and SCGP to turn school carton waste into new school desks and chairs for underprivileged schools across Thailand.',
-    excerptTh: 'อีโค่ เฟรนด์ลี่ ไทย ผนึกกำลัง SCGC, CP ALL และ SCGP เปลี่ยนขยะกล่องนมโรงเรียนเป็นโต๊ะเก้าอี้นักเรียนชุดใหม่ มอบแด่โรงเรียนที่ขาดแคลนทั่วประเทศ',
-    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=1000',
+    title: 'EFT join careton กล่องนมรักษ์โลก',
+    titleTh: 'EFT join careton กล่องนมรักษ์โลก',
+    date: 'October 18, 2024',
+    dateTh: '18 ตุลาคม 2567',
+    category: 'Sustainability Alliance',
+    categoryTh: 'พันธมิตรความยั่งยืน',
+    author: 'Eco Friendly Thai & Careton Alliance',
+    authorTh: 'อีโค่ เฟรนด์ลี่ ไทย และภาคี Careton',
+    excerpt: 'EFT joins forces with the Careton project — transforming post-consumer UHT beverage cartons into high-value circular resources and eco-friendly products.',
+    excerptTh: 'EFT ร่วมกับโครงการ careton กล่องนมรักษ์โลก เดินหน้าขับเคลื่อนการคัดแยกและรวบรวมกล่องนม UHT นำกลับมารีไซเคิลเป็นทรัพยากรหมุนเวียนทรงคุณค่า',
+    image: '/news/new1.jpg',
     content: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "The 'Ton-Kla Rai Tung' (Zero-Waste Sprouts) initiative marks a landmark alliance between Eco Friendly Thai (EFT) and industry leaders including CP ALL, SCGC, and SCGP to establish upstream waste segregation ecosystems in schools nationwide."
+        "Eco Friendly Thai (EFT) proudly joins the 'Careton — กล่องนมรักษ์โลก' national campaign, taking a major leap toward sustainable packaging recycling and zero-waste communities across Thailand."
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Students learn practical techniques for cleaning and flattening UHT milk cartons. These are collected and processed through EFT's closed-loop hydrapulpers to isolate high-purity paper pulp, while residual Poly-Al layers are compressed into durable Eco School Furniture tops delivered back to rural schools."
+        "Through this partnership, used UHT beverage and milk cartons collected from schools, consumers, and partner networks are systematically channeled into EFT's advanced recycling facilities. The separated paper fibers are upcycled into clean paper products, while the poly-aluminum composite layers are pressed into durable building boards and eco-friendly school furniture."
       ),
       React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
-        "\"Waste is never truly waste when we understand how to transform it into enduring resources that benefit youth and communities.\" — Somyot Watpanich, Managing Director, Eco Friendly Thai"
+        "\"Every single carton saved from landfills is a step forward for the circular economy. We turn everyday carton waste into lasting community assets.\" — Eco Friendly Thai"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "To date, the program has collected over 5,000,000 UHT beverage cartons, diverted over 65 metric tons from landfills, and prevented more than 67,000 kgCO2e in greenhouse gas emissions."
+        "This collaboration reaffirms EFT's dedication to closing the loop on post-consumer carton packaging and establishing a truly circular model in Thailand."
       )
     ),
     contentTh: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "โครงการ 'ต้นกล้าไร้ถัง' (Ton-Kla Rai Tung) คือความร่วมมือครั้งสำคัญระหว่าง บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด (EFT) ร่วมกับภาคีเครือข่ายชั้นนำ อาทิ CP ALL, SCGC และ SCGP เพื่อสร้างระบบนิเวศการคัดแยกขยะตั้งแต่ต้นทางในโรงเรียนทั่วประเทศ"
+        "บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด (EFT) เข้าร่วมโครงการ 'careton กล่องนมรักษ์โลก' อย่างเป็นทางการ เพื่อขับเคลื่อนการบริหารจัดการบรรจุภัณฑ์กล่องเครื่องดื่มอย่างยั่งยืน และขยายระบบการคัดแยกกล่องนม UHT หลังการบริโภคสู่การรีไซเคิล 100%"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "ในโครงการนี้ นักเรียนได้เรียนรู้การพับกล่องนม UHT ให้แบนสะอาด เพื่อส่งต่อให้โรงงาน EFT นำไปผ่านกระบวนการไฮโดรพัลเปอร์ (Hydrapulper) แยกเยื่อกระดาษบริสุทธิ์ และนำแผ่นพลาสติกอะลูมิเนียม (Poly-Al) มาอัดขึ้นรูปเป็นท็อปโต๊ะและเก้าอี้นักเรียน Eco School Furniture ส่งมอบกลับคืนสู่โรงเรียนที่ขาดแคลน"
+        "โครงการ careton กล่องนมรักษ์โลก มุ่งเน้นการสร้างความตระหนักรู้และรวบรวมกล่องนมใช้แล้วจากโรงเรียน ชุมชน และภาคีเครือข่าย โดยส่งตรงเข้าสู่กระบวนการรีไซเคิลของ EFT ที่สามารถแยกเยื่อกระดาษบริสุทธิ์นำกลับมาทำกระดาษคุณภาพสูง และนำชั้นพลาสติกอะลูมิเนียม (Poly-Al) มาอัดขึ้นรูปเป็นแผ่นกระดาน แผ่นหลังคา และโต๊ะเก้าอี้เพื่อสิ่งแวดล้อม"
       ),
       React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
-        "\"ขยะไม่ใช่ขยะ ถ้าเรารู้วิธีเปลี่ยนมันให้กลายเป็นทรัพยากรที่มีคุณค่ากลับคืนสู่เยาวชนและสังคม\" — คุณสมยศ วัฒน์พานิช, กรรมการผู้จัดการ อีโค่ เฟรนด์ลี่ ไทย"
+        "\"กล่องนมใช้แล้วไม่ใช่ขยะ แต่คือทรัพยากรหมุนเวียนทรงคุณค่าที่จะกลับมาสร้างประโยชน์ให้สังคมและสิ่งแวดล้อมต่อไป\" — อีโค่ เฟรนด์ลี่ ไทย"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "ปัจจุบันโครงการสามารถรวบรวมกล่องนม UHT ได้มากกว่า 5,000,000 กล่อง ลดปริมาณขยะฝังกลบได้กว่า 65 ตัน และลดการปล่อยก๊าซเรือนกระจกได้มากกว่า 67,000 kgCO2e อย่างเป็นรูปธรรม"
+        "ความร่วมมือในครั้งนี้ช่วยลดปริมาณขยะฝังกลบ ลดการปล่อยก๊าซเรือนกระจก และตอกย้ำพันธกิจของ EFT ในการเป็นผู้นำด้าน Circular Economy ของประเทศไทย"
       )
     )
   },
   {
     id: 2,
-    title: 'SME Scale Up Program Winner Announcement Pitching Day',
-    titleTh: 'SME Scale Up Program Winner Announcement Pitching Day',
-    date: 'June 25, 2022',
-    dateTh: '25 มิถุนายน 2565',
-    category: 'Award & Milestone',
-    categoryTh: 'รางวัลและการยอมรับ',
-    author: 'Thailand SME Development Council',
-    authorTh: 'สภาพัฒนาวิสาหกิจขนาดกลางและขนาดย่อม',
-    excerpt: 'Eco Friendly Thai won 1st Place in the Thailand SME Scale Up Program, recognizing breakthrough circular economy scalability and 2,000 MT/month expansion.',
-    excerptTh: 'อีโค่ เฟรนด์ลี่ ไทย คว้ารางวัลชนะเลิศอันดับ 1 ในโครงการ SME Scale Up ตอกย้ำความสำเร็จการขยายธุรกิจหมุนเวียนสู่ระดับ 2,000 ตัน/เดือน',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1000',
+    title: 'EFT product in ECO MALL THAILAND',
+    titleTh: 'EFT product in ECO MALL THAILAND',
+    date: 'November 2, 2024',
+    dateTh: '2 พฤศจิกายน 2567',
+    category: 'Exhibition & Retail',
+    categoryTh: 'นิทรรศการและพื้นที่จำหน่าย',
+    author: 'ECO MALL THAILAND & EFT Showcase',
+    authorTh: 'ECO MALL THAILAND และทีมงาน EFT',
+    excerpt: 'Our products are now featured in ECO MALL THAILAND — showcasing innovative upcycled building materials and lifestyle items made from 100% recycled cartons.',
+    excerptTh: 'our product in ECO MALL THAILAND — ผลิตภัณฑ์รักษ์โลกของ EFT ร่วมจัดแสดงและเปิดพื้นที่จำหน่ายในศูนย์รวมผลิตภัณฑ์เพื่อความยั่งยืน ECO MALL THAILAND',
+    image: '/news/new2.webp',
     content: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "Eco Friendly Thai Co., Ltd. secured 1st Place at the Thailand SME Scale Up Program Pitching Day, recognized for its breakthrough closed-loop business model that extracts 100% value from post-consumer beverage cartons."
+        "We are proud to present our products in ECO MALL THAILAND! Eco Friendly Thai's full line of circular upcycled materials is now prominently displayed in Thailand's premier eco-lifestyle destination."
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "The distinguished judging committee commended EFT as an exemplary circular enterprise solving waste challenges economically without reliance on donations alone, generating viable commercial products for both the industrial pulp and construction sectors."
+        "Visitors and eco-conscious businesses can explore firsthand the exceptional durability, waterproof qualities, and aesthetics of EFT's eco-boards, structural panels, and sustainable home items engineered entirely from recycled beverage cartons."
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"Our presence in ECO MALL THAILAND connects responsible consumers and designers with genuine circular materials, proving sustainable living is practical and beautiful.\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "This achievement served as a strategic catalyst for expanding EFT's third manufacturing facility in Ratchaburi province, bringing total operational capacity to 2,000 metric tons per month."
+        "Visit ECO MALL THAILAND to experience EFT's circular innovations in person and join our green transition today."
       )
     ),
     contentTh: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด ได้รับรางวัลชนะเลิศอันดับ 1 ในงาน Thailand SME Scale Up Program Pitching Day จากผลงานการขยายโมเดลธุรกิจหมุนเวียน (Circular Business Model) ที่สามารถสร้างมูลค่าเพิ่มให้กับขยะบรรจุภัณฑ์เครื่องดื่มได้ครบวงจร 100%"
+        "our product in ECO MALL THAILAND — บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด ภูมิใจนำเสนอผลิตภัณฑ์รักษ์โลกครบวงจรที่ผ่านการรีไซเคิลจากกล่องเครื่องดื่ม UHT 100% ภายในพื้นที่จัดแสดงและจำหน่ายของ ECO MALL THAILAND"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "คณะกรรมการผู้ทรงคุณวุฒิยกย่อง EFT ในฐานะองค์กรต้นแบบที่สามารถแก้ปัญหาขยะแบบ Zero-Waste ได้จริงทางเศรษฐศาสตร์ โดยไม่พึ่งพาเพียงการบริจาค แต่สร้างผลิตภัณฑ์ที่มีคุณภาพเชิงพาณิชย์ แข่งขันได้ทั้งในตลาดเยื่อกระดาษอุตสาหกรรมและวัสดุก่อสร้างทดแทนไม้"
+        "ภายในบูธจัดแสดง ผู้เข้าชมและผู้ประกอบการสามารถสัมผัสนวัตกรรมวัสดุก่อสร้างและของใช้รักษ์โลก อาทิ แผ่นไม้อีโค่บอร์ด แผ่นลายหินอ่อน แผ่นทางเดินภายนอก และเฟอร์นิเจอร์อัปไซเคิล ที่โดดเด่นด้วยคุณสมบัติกันน้ำ 100% กันปลวก และทนทานต่อทุกสภาวะอากาศ"
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"การนำผลิตภัณฑ์ EFT มาร่วมจัดแสดงที่ ECO MALL THAILAND ช่วยให้ประชาชนและสถาปนิกเห็นคุณค่าของการนำวัสดุหมุนเวียนมาใช้งานได้จริงในชีวิตประจำวัน\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "รางวัลนี้เป็นแรงผลักดันสำคัญในการเดินหน้าขยายโรงงานแห่งที่ 3 ที่จังหวัดราชบุรี เพื่อเพิ่มกำลังการผลิตรวมเป็น 2,000 เมตริกตันต่อเดือน รองรับความต้องการของตลาดทั้งในประเทศและระดับสากล"
+        "ขอเชิญผู้สนใจร่วมชมนวัตกรรมผลิตภัณฑ์ของ EFT ได้ที่ ECO MALL THAILAND เพื่อร่วมสร้างสังคมไร้ขยะไปด้วยกัน"
       )
     )
   },
   {
     id: 3,
-    title: 'The Incubation Network: Thailand Plastics Circularity Accelerator Cohort',
-    titleTh: 'The Incubation Network: Thailand Plastics Circularity Accelerator Cohort',
-    date: 'December 17, 2021',
-    dateTh: '17 ธันวาคม 2564',
-    category: 'International Network',
-    categoryTh: 'เครือข่ายนวัตกรรมสากล',
-    author: 'The Incubation Network & The Circulate Initiative',
-    authorTh: 'The Incubation Network และ The Circulate Initiative',
-    excerpt: 'The Incubation Network announced the wonderful cohort of 5 selected organizations including Eco Friendly Thai for the Thailand Plastics Circularity Accelerator.',
-    excerptTh: 'The Incubation Network ประกาศคัดเลือก 5 องค์กรแถวหน้าของไทย รวมถึง Eco Friendly Thai เข้าร่วมโครงการเร่งรัดนวัตกรรมพลาสติกหมุนเวียนระดับสากล',
-    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=1000',
+    title: 'มอบให้แก่โรงเรียนสอนคนตาบอด',
+    titleTh: 'มอบให้แก่โรงเรียนสอนคนตาบอด',
+    date: 'December 12, 2024',
+    dateTh: '12 ธันวาคม 2567',
+    category: 'CSR & Education',
+    categoryTh: 'กิจกรรมเพื่อสังคมและการศึกษา',
+    author: 'EFT Community CSR Program',
+    authorTh: 'โครงการปันน้ำใจเพื่อสังคม EFT',
+    excerpt: 'Recycled milk cartons transformed into specialized braille writing paper, donated directly to the School for the Blind to empower inclusive education.',
+    excerptTh: 'กล่องนมผลิตกระดาษใช้ในการเขียนอักษรเบรลล์ มอบให้แก่โรงเรียนสอนคนตาบอด เพื่อสนับสนุนการเรียนรู้ของน้องๆ ผู้มีความบกพร่องทางการมองเห็น',
+    image: '/news/new3.jpg',
     content: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "The Incubation Network, in partnership with The Circulate Initiative, SecondMuse, Global Affairs Canada, and ECCA Family Foundation, officially revealed the 5 vanguard organizations selected for the Thailand Plastics Circularity Accelerator."
+        "Eco Friendly Thai transforms discarded UHT milk cartons into specialized, thick braille writing paper and donates them directly to the School for the Blind."
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Eco Friendly Thai (EFT) was chosen alongside CIRAC, CORSAIR, Trash Lucky, and 2nd Life for its patented poly-aluminum separation and heavy compression thermo-forming methods that yield certified upcycled building materials."
+        "Braille embossing requires high-durability paper with specific tensile strength and fiber density. EFT's hydrapulping process extracts long, high-purity virgin fibers from clean milk cartons, creating the ideal medium for tactile braille dots that do not collapse easily."
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"Turning everyday milk cartons into braille paper opens up a world of knowledge and tactile learning for visually impaired students.\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Participation has accelerated digital carbon credit traceability and enabled access to global ESG-compliant green procurement supply chains."
+        "This project exemplifies how circular recycling creates direct, heartwarming social benefits while conserving natural forestry resources."
       )
     ),
     contentTh: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "The Incubation Network ร่วมกับ The Circulate Initiative, SecondMuse, รัฐบาลแคนาดา และมูลนิธิ ECCA Family Foundation ได้ประกาศคัดเลือก 5 องค์กรแถวหน้าของประเทศไทยเข้าร่วมโครงการ Thailand Plastics Circularity Accelerator"
+        "กล่องนมผลิตกระดาษใช้ในการเขียนอักษรเบรลล์ มอบให้แก่โรงเรียนสอนคนตาบอด — โครงการสร้างสรรค์สังคมโดย บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด ร่วมส่งต่อโอกาสทางการศึกษาให้แก่น้องๆ ผู้มีความบกพร่องทางการมองเห็น"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Eco Friendly Thai (EFT) ได้รับการคัดเลือกเป็น 1 ใน 5 องค์กร (ร่วมกับ CIRAC, CORSAIR, Trash Lucky และ 2nd Life) ด้วยจุดเด่นด้านเทคโนโลยีการแยกชั้น Poly-Aluminium และการแปรรูปเป็นผลิตภัณฑ์ Upcycled Building Materials ที่มีมาตรฐานรับรองทางวิศวกรรม"
+        "เยื่อกระดาษบริสุทธิ์เส้นใยยาวที่ได้จากการสกัดกล่องนม UHT ของ EFT มีคุณสมบัติเหนียว หนา และทนทาน เหมาะสมเป็นพิเศษสำหรับการนำมาผลิตเป็นกระดาษเขียนและพิมพ์อักษรเบรลล์ ทำให้จุดนูนมีความคมชัดคงทน ไม่ยุบตัวง่าย ช่วยให้นักเรียนสามารถอ่านและเขียนบทเรียนได้อย่างสะดวกและมีประสิทธิภาพ"
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"การเปลี่ยนกล่องนมธรรมดาให้กลายเป็นกระดาษอักษรเบรลล์ คือการเปลี่ยนขยะให้เป็นโอกาส และเปิดประตูสู่โลกแห่งการเรียนรู้ที่เท่าเทียมกันของทุกคนในสังคม\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "การเข้าร่วมโครงการดังกล่าวช่วยยกระดับระบบตรวจสอบย้อนกลับ (Traceability) ของคาร์บอนเครดิต และการขยายตลาดผลิตภัณฑ์หมุนเวียนสู่กลุ่มลูกค้าสากลที่ให้ความสำคัญกับมาตรฐาน ESG"
+        "EFT มุ่งมั่นเดินหน้าโครงการมอบกระดาษอักษรเบรลล์อย่างต่อเนื่อง เพื่อเป็นส่วนหนึ่งในการสนับสนุนการศึกษาพิเศษและลดการใช้ทรัพยากรป่าไม้ใหม่อย่างยั่งยืน"
       )
     )
   },
   {
     id: 4,
-    title: 'Poly-Al Composite Innovation: จากขยะสู่แผ่นสมาร์ทบอร์ดและบล็อกก่อสร้างเขียว',
-    titleTh: 'Poly-Al Composite Innovation: จากขยะสู่แผ่นสมาร์ทบอร์ดและบล็อกก่อสร้างเขียว',
-    date: 'March 14, 2023',
-    dateTh: '14 มีนาคม 2566',
-    category: 'Material Innovation',
-    categoryTh: 'นวัตกรรมวัสดุหมุนเวียน',
-    author: 'EFT R&D Engineering Team',
-    authorTh: 'ทีมนักวิจัยและวิศวกรรม EFT',
-    excerpt: 'Transforming post-consumer milk carton Poly-Al layers into termite-proof, waterproof, heat-insulating building panels and structural roof tiles.',
-    excerptTh: 'การแปรรูปชั้นอะลูมิเนียมฟอยล์และพลาสติกจากกล่องนม UHT เป็นแผ่นสมาร์ทบอร์ดกันน้ำ 100% กันปลวก และกระเบื้องหลังคาฉนวนความร้อน',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1000',
+    title: 'ECO BLOCK G-GREEN',
+    titleTh: 'ECO BLOCK G-GREEN',
+    date: 'January 15, 2025',
+    dateTh: '15 มกราคม 2568',
+    category: 'Award & Innovation',
+    categoryTh: 'รางวัลและนวัตกรรม',
+    author: 'Research Team led by Ajarn Rommanee Wangdeetham',
+    authorTh: 'ทีมวิจัย โดย หัวหน้าทีมวิจัย อาจารย์รมณีย์ หวังดีธรรม',
+    excerpt: 'ECO BLOCK G-GREEN — Innovative upcycled plastic product awarded the G-GREEN certification in Green Production, led by Head of Research Ajarn Rommanee Wangdeetham.',
+    excerptTh: 'ECO BLOCK G-GREEN - ผลิตภัณฑ์ พลาสติกนวัตรกรรมได้รางวัล G-GREEN กลุ่มผู้ผลิต (Green Production) โดย หัวหน้าทีมวิจัย อาจารย์รมณีย์ หวังดีธรรม',
+    image: '/news/new4.webp',
     content: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "Eco Friendly Thai's R&D engineering division has successfully perfected thermo-compression composite manufacturing that fuses post-consumer beverage carton Poly-Al layers without synthetic resins or harmful adhesive chemicals."
+        "ECO BLOCK G-GREEN is honored with the prestigious G-GREEN certification in the Green Production category, under the visionary research leadership of Ajarn Rommanee Wangdeetham."
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "The resulting Poly-Al boards are 100% waterproof, rot-proof, termite-resistant, and provide exceptional thermal insulation compared to standard gypsum or cement boards. Applications range from architectural wall cladding, acoustic ceilings, and heavy-duty industrial pallets to outdoor paving tiles."
+        "The ECO BLOCK represents a breakthrough in sustainable construction materials, transforming post-consumer poly-aluminum plastic waste from beverage cartons into heavy-duty, high-load-bearing interlocking paving blocks and structural modules without emitting toxic VOCs."
       ),
       React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
-        "\"Upcycling is not merely about finding a second use; it is about engineering a material that outperforms traditional virgin counterparts in durability and eco-efficiency.\""
+        "\"The G-GREEN award validates our rigorous standards in clean eco-manufacturing, energy efficiency, and verified carbon abatement in construction.\" — Ajarn Rommanee Wangdeetham"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Every standard 1.2m x 2.4m board recycles approximately 1,200 UHT milk cartons and locks in carbon for decades."
+        "This national recognition solidifies EFT's status as a pioneer in circular building technology, providing municipal and commercial projects with certified low-carbon alternatives."
       )
     ),
     contentTh: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "ทีมนักวิจัยและวิศวกรรมของ EFT ประสบความสำเร็จในการพัฒนาเทคโนโลยี Thermocompression ขั้นสูง หลอมรวมเศษพลาสติก Polyethylene และอะลูมิเนียมฟอยล์ (Poly-Al) โดยไม่ใช้กาวหรือสารเคมีอันตราย"
+        "ECO BLOCK G-GREEN - ผลิตภัณฑ์ พลาสติกนวัตรกรรมได้รางวัล G-GREEN กลุ่มผู้ผลิต (Green Production) โดย หัวหน้าทีมวิจัย อาจารย์รมณีย์ หวังดีธรรม ตอกย้ำความเป็นเลิศในการผลิตที่เป็นมิตรต่อสิ่งแวดล้อม"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "วัสดุที่ได้มีความแข็งแรงทนทานสูง กันน้ำ 100% กันปลวก ไม่เป็นเชื้อรา และช่วยลดความร้อนเข้าสู่ตัวอาคารได้มากกว่าวัสดุทั่วไป เหมาะสำหรับงานก่อสร้างและตกแต่งทั้งภายนอกและภายใน ทดแทนไม้และยิปซัมได้อย่างสมบูรณ์แบบ"
+        "ECO BLOCK เป็นนวัตกรรมบล็อกปูพื้นและอิฐก่อสร้างที่พัฒนาขึ้นจากการแปรรูปพลาสติกคอมโพสิตและเศษฟอยล์อะลูมิเนียมจากกล่องนม UHT ผ่านกระบวนการขึ้นรูปด้วยความร้อนและแรงอัดสูงโดยปราศจากสารเคมีอันตราย มีความทนทานต่อแรงกด รับน้ำหนักได้สูง ไม่แตกหักง่าย และมีอายุการใช้งานยาวนานนับสิบปี"
       ),
       React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
-        "\"การอัปไซเคิลไม่ใช่แค่การหาทางกำจัดขยะ แต่คือการสร้างสรรค์วัสดุใหม่ที่มีสมรรถนะเหนือกว่าวัสดุธรรมชาติเดิม และลดการทำลายทรัพยากรโลก\""
+        "\"รางวัล G-GREEN กลุ่มผู้ผลิต (Green Production) คือเครื่องหมายยืนยันถึงมาตรฐานกระบวนการผลิตสะอาดที่ไม่สร้างมลพิษ และช่วยลดการปล่อยคาร์บอนได้อย่างแท้จริง\" — อาจารย์รมณีย์ หวังดีธรรม"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "แผ่นสมาร์ทบอร์ด EFT ขนาดมาตรฐาน 1.2 x 2.4 เมตร หนึ่งแผ่น ช่วยรีไซเคิลกล่องนม UHT ได้มากถึง 1,200 กล่อง กักเก็บคาร์บอนและช่วยลดปริมาณขยะฝังกลบอย่างมหาศาล"
+        "ความสำเร็จนี้สะท้อนถึงการผสานพลังทางวิชาการและเทคโนโลยีอุตสาหกรรมรีไซเคิล เพื่อยกระดับวัสดุก่อสร้างไทยสู่มาตรฐานสากลที่เป็นมิตรกับโลก"
       )
     )
   },
   {
     id: 5,
-    title: 'DCCE Circular Economy Standard Certification & Carbon Reduction',
-    titleTh: 'DCCE Circular Economy Standard Certification & Carbon Reduction',
-    date: 'August 10, 2023',
-    dateTh: '10 สิงหาคม 2566',
-    category: 'Environmental Standard',
-    categoryTh: 'มาตรฐานสิ่งแวดล้อมและคาร์บอน',
-    author: 'Department of Climate Change and Environment',
-    authorTh: 'กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม (DCCE)',
-    excerpt: 'EFT official certification for Circular Economy compliance, validating over 67,000+ kgCO2e greenhouse gas reduction through full-loop carton recycling.',
-    excerptTh: 'EFT ได้รับการรับรองมาตรฐาน Upcycle Circular Economy ยืนยันการลดก๊าซเรือนกระจกได้จริงกว่า 67,000+ kgCO2e ผ่านระบบหมุนเวียนแบบครบวงจร',
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000',
+    title: 'ECO FRIENDLY THAI, TAIWA, and CHUGAI Launch ES GREEN SOLUTION – A Sustainable Solution in Recycled Plastic Pallets',
+    titleTh: 'ECO FRIENDLY THAI, TAIWA และ CHUGAI เปิดตัว ES GREEN SOLUTION – นวัตกรรมพาเลทพลาสติกรีไซเคิลเพื่อความยั่งยืน',
+    date: 'May 16, 2025',
+    dateTh: '16 พฤษภาคม 2568',
+    category: 'International Joint Venture',
+    categoryTh: 'การร่วมทุนระดับสากล',
+    author: 'ES GREEN SOLUTION (EFT, TAIWA, CHUGAI)',
+    authorTh: 'ES GREEN SOLUTION (EFT, TAIWA, CHUGAI)',
+    excerpt: '(Plastic and rubber, BITEC, BANGKOK) - ECO FRIENDLY THAI, TAIWA, and CHUGAI announce the launch of ES GREEN SOLUTION, a joint venture manufacturing high-quality recycled plastic pallets for circular logistics.',
+    excerptTh: '(Plastic and rubber, BITEC, BANGKOK) - 16 พฤษภาคม 2568: ECO FRIENDLY THAI, TAIWA และ CHUGAI ร่วมประกาศจัดตั้ง ES GREEN SOLUTION ผลิตพาเลทพลาสติกรีไซเคิลคุณภาพสูง ยกระดับซัพพลายเชนสู่ความยั่งยืน',
+    image: '/news/new5.jpg',
     content: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "Eco Friendly Thai Co., Ltd. has earned official Upcycle Circular Economy standard accreditation from Thailand's Department of Climate Change and Environment (DCCE), Ministry of Natural Resources and Environment."
+        "(Plastic and rubber, BITEC, BANGKOK) — 16 May 2025, ECO FRIENDLY THAI, TAIWA, and CHUGAI are proud to announce the establishment of ES GREEN SOLUTION, a joint venture company dedicated to manufacturing high-quality recycled plastic pallets."
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "This certification validates EFT's rigorous chain of custody and data traceability, verifying reductions exceeding 67,000+ kgCO2e through closed-loop carton hydrapulping and zero-waste recovery processes."
+        "This strategic partnership combines the expertise and sustainability commitments of all three companies to deliver innovative, eco-friendly logistics solutions for industries worldwide. ES GREEN SOLUTION will focus on producing durable, lightweight, and environmentally responsible plastic pallets made from recycled materials, supporting the global shift toward a circular economy."
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"By reducing waste and carbon footprint, ES GREEN aims to set new standards in sustainable supply chain solutions.\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "Corporate partners across retail, beverage production, and building materials can now seamlessly account for verified ESG carbon offset metrics when collaborating with EFT."
+        "The joint venture will serve modern warehousing, cold chain, and international shipping sectors, proving that recycled plastics offer superior lifecycle economic and ecological returns compared to conventional single-use timber pallets."
       )
     ),
     contentTh: React.createElement(React.Fragment, null,
       React.createElement("p", { className: "mb-6 text-lg font-medium text-[#1B4D3E]" },
-        "บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด ได้รับการรับรองมาตรฐาน Upcycle Circular Economy อย่างเป็นทางการจาก กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม (DCCE) กระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม"
+        "(Plastic and rubber, BITEC, BANGKOK) - 16 พฤษภาคม 2568, บริษัท อีโค่ เฟรนด์ลี่ ไทย จำกัด (ECO FRIENDLY THAI), บริษัท TAIWA และ บริษัท CHUGAI ร่วมกันประกาศจัดตั้งบริษัทร่วมทุน 'ES GREEN SOLUTION' อย่างเป็นทางการ เพื่อมุ่งเน้นการผลิตพาเลทพลาสติกรีไซเคิลคุณภาพสูง"
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "การรับรองนี้ยืนยันถึงความแม่นยำของกระบวนการรีไซเคิลและระบบตรวจสอบย้อนกลับ (Traceability) ของปริมาณการลดก๊าซเรือนกระจกกว่า 67,000+ kgCO2e อย่างเป็นรูปธรรม"
+        "ความร่วมมือเชิงกลยุทธ์ในครั้งนี้ เป็นการรวมพลังความเชี่ยวชาญด้านเทคโนโลยีวัสดุศาสตร์และพันธกิจด้านความยั่งยืนของทั้งสามบริษัท เพื่อส่งมอบโซลูชันโลจิสติกส์ที่เป็นมิตรกับสิ่งแวดล้อมสู่อุตสาหกรรมทั่วโลก โดย ES GREEN SOLUTION จะมุ่งเน้นการผลิตพาเลทพลาสติกที่มีความทนทาน น้ำหนักเบา และผลิตจากวัสดุรีไซเคิล ซึ่งสนับสนุนการเปลี่ยนผ่านสู่เศรษฐกิจหมุนเวียน (Circular Economy) ในระดับสากล"
+      ),
+      React.createElement("blockquote", { className: "border-l-4 border-[#1B4D3E] pl-6 italic text-xl text-[#2C2A26] my-8 font-medium bg-[#EBE7DE]/60 p-6 rounded-r-lg" },
+        "\"ด้วยการลดของเสียและการลดคาร์บอนฟุตพริ้นท์ ES GREEN มีเป้าหมายในการสร้างมาตรฐานใหม่สำหรับโซลูชันซัพพลายเชนและโลจิสติกส์ที่ยั่งยืน\""
       ),
       React.createElement("p", { className: "mb-6 text-[#5D5A53] leading-relaxed" },
-        "ส่งผลให้องค์กรพันธมิตรทั้งผู้ผลิตเครื่องดื่ม ผู้ประกอบการค้าปลีก และภาคอุตสาหกรรมก่อสร้าง สามารถนำรายงาน Carbon Offset ไปใช้ประโยชน์ในมิติ ESG และรายงานความยั่งยืนระดับสากลได้อย่างถูกต้องตามกฎเกณฑ์"
+        "พาเลทพลาสติกรีไซเคิลจาก ES GREEN SOLUTION พร้อมรองรับภาคการขนส่ง คลังสินค้าอัจฉริยะ และการส่งออกระหว่างประเทศ ตอบโจทย์เป้าหมาย Net Zero และ ESG ขององค์กรชั้นนำทั่วโลก"
       )
     )
   }

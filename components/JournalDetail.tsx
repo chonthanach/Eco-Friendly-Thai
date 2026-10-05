@@ -74,6 +74,15 @@ const JournalDetail: React.FC<JournalDetailProps> = ({ article, onBack, lang }) 
             </div>
           )}
 
+          {/* Featured Image in Detail */}
+          <div className="mb-10 rounded-2xl overflow-hidden bg-stone-100 border border-[#D6D1C7] shadow-sm flex items-center justify-center p-2 sm:p-4">
+            <img
+              src={article.image}
+              alt={lang === 'th' ? (article.titleTh || article.title) : (article.title || article.titleTh)}
+              className="max-h-[600px] w-auto max-w-full object-contain rounded-xl"
+            />
+          </div>
+
           {/* Article Body */}
           <div className="text-base sm:text-lg font-normal leading-relaxed text-[#3A3833] space-y-6">
             {lang === 'th' ? (article.contentTh || article.content) : article.content}

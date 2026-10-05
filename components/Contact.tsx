@@ -21,17 +21,17 @@ const FacebookIcon = () => (
   </svg>
 );
 
-const XIcon = () => (
+const TikTokIcon = () => (
   <svg className="w-9 h-9 hover:scale-110 transition-transform cursor-pointer drop-shadow-sm" viewBox="0 0 36 36">
     <circle cx="18" cy="18" r="18" fill="#000000" />
-    <path d="M22 12H24.2L19.4 17.5L25 25H20.7L17.3 20.6L13.5 25H11.2L16.4 19.1L11 12H15.5L18.6 16.1L22 12ZM21.2 23.6H22.5L14.7 13.3H13.4L21.2 23.6Z" fill="white" />
-  </svg>
-);
-
-const YoutubeIcon = () => (
-  <svg className="w-9 h-9 hover:scale-110 transition-transform cursor-pointer drop-shadow-sm" viewBox="0 0 36 36">
-    <circle cx="18" cy="18" r="18" fill="#FF0000" />
-    <path d="M24.8 14.8C24.7 13.9 24 13.2 23.1 13C21.6 12.6 18 12.6 18 12.6C18 12.6 14.4 12.6 12.9 13C12 13.2 11.3 13.9 11.2 14.8C10.8 16.2 10.8 18 10.8 18C10.8 18 10.8 19.8 11.2 21.2C11.3 22.1 12 22.8 12.9 23C14.4 23.4 18 23.4 18 23.4C18 23.4 21.6 23.4 23.1 23C24 22.8 24.7 22.1 24.8 21.2C25.2 19.8 25.2 18 25.2 18C25.2 18 25.2 16.2 24.8 14.8ZM16.5 20.3V15.7L20.5 18L16.5 20.3Z" fill="white" />
+    <g transform="translate(9 8.5) scale(0.75)">
+      {/* Cyan offset */}
+      <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6 2.6 2.6 0 0 1 3.38-2.48V9.66A5.69 5.69 0 0 0 4.17 15.3a5.69 5.69 0 0 0 5.69 5.69 5.69 5.69 0 0 0 5.69-5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48Z" fill="#25F4EE" transform="translate(-0.8 -0.6)" />
+      {/* Red offset */}
+      <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6 2.6 2.6 0 0 1 3.38-2.48V9.66A5.69 5.69 0 0 0 4.17 15.3a5.69 5.69 0 0 0 5.69 5.69 5.69 5.69 0 0 0 5.69-5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48Z" fill="#FE2C55" transform="translate(0.8 0.6)" />
+      {/* Main white */}
+      <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6 2.6 2.6 0 0 1 3.38-2.48V9.66A5.69 5.69 0 0 0 4.17 15.3a5.69 5.69 0 0 0 5.69 5.69 5.69 5.69 0 0 0 5.69-5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48Z" fill="#FFFFFF" />
+    </g>
   </svg>
 );
 
@@ -326,28 +326,24 @@ const Contact: React.FC<ContactProps> = ({ lang, prefilledProduct, onClearPrefil
             {/* Social Icons at Bottom Right */}
             <div className="pt-6 border-t border-[#D6D1C7]/60 mt-6 flex items-center justify-end gap-3">
               <a 
-                href="https://facebook.com/ecofriendlythai" 
+                id="contact-social-facebook"
+                href="https://www.facebook.com/profile.php?id=61590551311303" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 title="Facebook: Eco Friendly Thai"
+                aria-label="Facebook: Eco Friendly Thai"
               >
                 <FacebookIcon />
               </a>
               <a 
-                href="https://x.com" 
+                id="contact-social-tiktok"
+                href="https://www.tiktok.com/@eft_ecofriendlythai" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                title="X / Twitter"
+                title="TikTok: @eft_ecofriendlythai"
+                aria-label="TikTok: @eft_ecofriendlythai"
               >
-                <XIcon />
-              </a>
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                title="YouTube"
-              >
-                <YoutubeIcon />
+                <TikTokIcon />
               </a>
             </div>
 

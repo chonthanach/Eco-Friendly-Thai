@@ -231,7 +231,7 @@ const Journal: React.FC<JournalProps> = ({ onArticleClick, lang }) => {
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs sm:text-sm font-mono font-bold text-[#1B4D3E]">
+              <span className="text-xs sm:text-sm font-sans tabular-nums font-bold text-[#1B4D3E]">
                 {String(activeIndex + 1).padStart(2, '0')} / {String(totalArticles).padStart(2, '0')}
               </span>
               <div className="flex items-center gap-1.5">

@@ -140,7 +140,7 @@ const Footer: React.FC<FooterProps> = ({ onNavClick, lang }) => {
                   {lang === 'th' ? CONTACT_INFO.addressHeadquarters : (CONTACT_INFO.addressHeadquartersEn || '99/92 Moo 2, Sai Ma, Mueang Nonthaburi 11000')}
                 </span>
               </p>
-              <p className="text-xs text-white/70 pt-1 font-mono">
+              <p className="text-xs text-white/70 pt-1 font-sans tabular-nums">
                 Tax ID: {CONTACT_INFO.registrationNo}
               </p>
             </div>

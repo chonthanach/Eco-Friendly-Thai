@@ -132,7 +132,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ lang }) => {
               <span className="text-xs uppercase font-bold tracking-widest text-[#8AE0B3] block mb-2">
                 {lang === 'th' ? 'บทสัมภาษณ์ผู้บริหาร' : 'Executive Interview'}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white leading-tight mb-3">
                 {lang === 'th' ? FEATURED_VIDEO.title : (FEATURED_VIDEO.titleEn || FEATURED_VIDEO.title)}
               </h3>
               <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
